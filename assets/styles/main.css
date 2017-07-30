@@ -1,0 +1,50 @@
+h1 {
+  text-align: center;
+  font-size: 24;
+  font-family: cursive;
+}
+
+.flex,.flex2 {
+  /* basic styling */
+  text-align: center;
+  width: 500px;
+  height: 150px;
+  border: 1px solid #000000;
+  margin: 0 auto;
+  /* flexbox setup */
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.flex>div {
+  flex: 1 1 auto;
+  width: 0;
+  transition: width 0.7s ease-out;
+}
+
+.flex2>div {
+  flex: 1 1 auto;
+  width: 0;
+  transition: width 0.7s ease-out;
+}
+
+
+/* colors */
+
+.flex>div:nth-child(1),.flex>div:nth-child(3),.flex2>div:nth-child(2)  {
+  background: #000000;
+}
+
+.flex>div:nth-child(2),.flex2>div:nth-child(1),.flex2>div:nth-child(3) {
+  background: #FFFFFF;
+}
+
+.ninjaChat {
+  display: inline-block;
+}
+
+.ticTacToe {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
