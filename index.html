@@ -7,18 +7,30 @@
 
   <!-- Do not add `link` tags-->
   <link href='favicon.ico' rel='shortcut icon' type='image/x-icon'>
-
+  <style>@import url('https://fonts.googleapis.com/css?family=Fondamento');</style>
   <!-- Do not add `script` tags-->
   <script charset='utf-8' defer src='public/vendor.js' type='text/javascript'></script>
   <script charset='utf-8' defer src='public/application.js' type='text/javascript'></script>
 </head>
 
 <body class='container-fluid'>
-  <br>
+  <div class='container-fluid page-wrap'>
 
-  <h1>Tic Tac Toe Ninja</h1>
-  <br>
-<div class='ticTacToe'>
+    <ul class='bottomnav navbar-fixed-bottom'>
+    <li><a href='#signin'>SIGN IN</a></li>
+    <li><a href='#signup'>SIGN UP</a></li>
+    <li><a href='#support'>SUPPORT</a></li>
+    <li class='icon'>
+      <a href='javascript:void(0);' onclick='myFunction()'>&#9776;</a>
+    </li>
+  </ul>
+ </div>
+
+  <p class='banner'>Tic Tac Toe Ninja</p>
+
+  <br><br>
+
+<div class='board'>
   <div class='flex'>
     <div>1</div>
     <div>2</div>
@@ -38,19 +50,6 @@
   </div>
 </div>
 
-  <div class='ninjaChat' id='page-wrap'>
-    <h2>Ninja Chat</h2>
-
-    <p id='name-area'></p>
-
-    <div id='chat-wrap'>
-      <div id='chat-area'></div>
-    </div>
-
-    <form id='send-message-area' name="send-message-area">
-      <textarea id='sendie' maxlength='200'></textarea>
-    </form>
-  </div>
 
 </body>
 </html>

@@ -1,15 +1,84 @@
-h1 {
+.banner {
   text-align: center;
-  font-size: 24;
-  font-family: cursive;
+  font-family: 'Fondamento', cursive;
+  font-size: 64px;
+  color: #FFFFFF;
+  margin-top: 20px;
 }
 
-.flex,.flex2 {
+body {
+  margin: 0 auto;
+  max-width: 600px;
+  background: url('http://i41.tinypic.com/fz8zo6.jpg');
+  background-size: cover;
+}
+
+ul.bottomnav {
+  list-style-type: none;
+  margin-bottom: 1px;
+  padding: 5px;
+  overflow: hidden;
+  background-color: #424242;
+}
+
+ul.bottomnav li {
+  float: right;
+}
+
+ul.bottomnav li a {
+    display: inline-block;
+    color: #ffffff;
+    text-align: center;
+    padding: 1px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+    font-family: cursive;
+}
+
+ul.bottomnav li a:hover {
+  background-color: #CFCFCF;
+}
+
+ul.bottomnav li.icon {
+  display: none;
+}
+
+/* When the screen is less than 680 pixels wide, hide all list items, except for the first one ('Home'). Show the list item that contains the link to open and close the bottomnav (li.icon) */
+@media screen and (max-width:680px) {
+  ul.bottomnav li:not(:first-child) {display: none;}
+  ul.bottomnav li.icon {
+    text-align: right;
+    display: inline-block;
+  }
+}
+/* The bottomnav when the user clicks on the icon. This class makes the bottomnav responsive in small screens */
+@media screen and (max-width:680px) {
+  ul.bottomnav.responsive {position: relative;}
+  ul.bottomnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  ul.bottomnav.responsive li {
+    display: inline;
+  }
+  ul.bottomnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+
+.page-wrap {
+  width: 100vw;
+  margin: 0 auto;
+}
+
+.flex,.flex2  {
   /* basic styling */
   text-align: center;
-  width: 500px;
-  height: 150px;
-  border: 1px solid #000000;
+  width: 385px;
+  height: 125px;
   margin: 0 auto;
   /* flexbox setup */
   display: flex;
@@ -28,23 +97,18 @@ h1 {
   transition: width 0.7s ease-out;
 }
 
-
 /* colors */
 
-.flex>div:nth-child(1),.flex>div:nth-child(3),.flex2>div:nth-child(2)  {
-  background: #000000;
+.flex>div:nth-child(1),.flex>div:nth-child(3),.flex2>div:nth-child(2) {
+  background: #424242;
 }
 
 .flex>div:nth-child(2),.flex2>div:nth-child(1),.flex2>div:nth-child(3) {
-  background: #FFFFFF;
+  background: #CFCFCF;
 }
 
-.ninjaChat {
-  display: inline-block;
-}
-
-.ticTacToe {
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
+.board {
+  margin: 0 auto;
+  max-width: 700px;
+  opacity: 0.7;
 }
