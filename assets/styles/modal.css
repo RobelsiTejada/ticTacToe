@@ -8,7 +8,8 @@
 
 .location {
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 600vw;
+  max-height: 200vw;
   color: #000;
   background-color: #000;
   background: url('http://i41.tinypic.com/29wjxw9.jpg');

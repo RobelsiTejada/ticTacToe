@@ -6,7 +6,7 @@
   margin: 0 auto;
   /* flexbox setup */
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   max-width: 600px;
   opacity: 0.7;
 }
