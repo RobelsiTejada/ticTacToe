@@ -6,7 +6,12 @@ const userB = function () {
 
 }
 
+const userC = function () {
+
+}
+
 module.exports = {
   userA,
-  userB
+  userB,
+  userC
 }
