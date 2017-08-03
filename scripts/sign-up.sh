@@ -1,17 +1,11 @@
 #!/bin/bash
 
-API="${API_ORIGIN:-https://ga-wdi-boston.herokuapp.com}"
-URL_PATH="/sign-up"
-curl "${API}${URL_PATH}" \
+curl "http://tic-tac-toe.wdibos.com/games/post" \
   --include \
   --request POST \
-  --header "Content-Type: application/json" \
-  --data '{
-    "credentials": {
-      "email": "'"${EMAIL}"'",
-      "password": "'"${PASSWORD}"'",
-      "password_confirmation": "'"${PASSWORD}"'"
-    }
-  }'
+  --data-urlencode ""
 
+# --header "Content-Type: application/x-www-form-urlencoded"
+
+# data output from curl doesn't have a trailing newline
 echo

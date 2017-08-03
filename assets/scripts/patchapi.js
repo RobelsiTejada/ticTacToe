@@ -9,30 +9,14 @@ const email = function (email) {
   })
 }
 
-const avatar = function (avatar) {
+const username = function (username) {
   return $.ajax({
-    url: app.host + '/players/' + avatar,
-    method: 'PATCH'
-  })
-}
-
-const gamepiece = function (gamepiece) {
-  return $.ajax({
-    url: app.host + '/players/' + gamepiece,
-    method: 'PATCH'
-  })
-}
-
-const record = function (record) {
-  return $.ajax({
-    url: app.host + '/players/' + record,
+    url: app.host + '/players/' + username,
     method: 'PATCH'
   })
 }
 
 module.exports = {
   email,
-  avatar,
-  gamepiece,
-  record
+  username
 }

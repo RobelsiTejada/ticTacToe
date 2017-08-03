@@ -1,17 +1,9 @@
 #!/bin/bash
 
-API="${API_ORIGIN:-https://ga-wdi-boston.herokuapp.com}"
-URL_PATH="/change-password"
-curl "${API}${URL_PATH}/${ID}" \
+curl "http://tic-tac-toe.wdibos.com/games/patch?id=${ID}" \
   --include \
   --request PATCH \
-  --header "Authorization: Token token=${TOKEN}" \
-  --header "Content-Type: application/json" \
-  --data '{
-    "passwords": {
-      "old": "'"${OLDPW}"'",
-      "new": "'"${NEWPW}"'"
-    }
-  }'
+  --data-urlencode ""
 
+# data output from curl doesn't have a trailing newline
 echo

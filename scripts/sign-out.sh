@@ -1,11 +1,8 @@
 #!/bin/bash
 
-API="${API_ORIGIN:-https://ga-wdi-boston.herokuapp.com}"
-URL_PATH="/sign-out"
-curl "${API}${URL_PATH}/${ID}" \
+curl "http://tic-tac-toe.wdibos.com/games/delete?id=$ID" \
   --include \
-  --request DELETE \
-  --header "Content-Type: application/json" \
-  --header "Authorization: Token token=$TOKEN"
+  --request DELETE
 
+# data output from curl doesn't have a trailing newline
 echo

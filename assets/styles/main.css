@@ -11,8 +11,12 @@ body {
   text-align: center;
   font-family: 'Fondamento', cursive;
   font-size: 64px;
-  color: #FF0101;
+  color: #1464F4;
   margin-top: 20px;
+}
+
+.tablefix {
+  text-align: center;
 }
 
 .newGame {
@@ -21,6 +25,14 @@ body {
   bottom: 1px;
   border: 3px solid #fff;
   padding: 10px;
-  background-color: #FF0101;
+  background-color: #1464F4;
   color: #000;
+}
+
+.turn,
+.messages {
+  margin-bottom: 10px;
+  font-size: 26px;
+  color: #fff;
+  text-align:center;
 }
