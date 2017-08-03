@@ -1,0 +1,53 @@
+$td-color: #555;
+$td-white: #fff;
+$fire-red: #e81717;
+$last-color: #d42;
+
+table {
+  border-collapse: collapse;
+  height: 450px;
+  margin: 0 auto;
+  position: fixed;
+  text-align: center;
+  width: 450px;
+
+
+  td {
+    border: 5px solid;
+    border-color: $td-white;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+
+    &::before {
+      font-size: 1.5em;
+      line-height: 1;
+    }
+
+    // player 1
+    &.cross::before {
+      content: url('http://m.UploadEdit.com/bbtc/1501769519854.gif');
+      margin: 0 auto;
+    }
+
+    // player 2
+    &.circle::before {
+      content: url('http://m.UploadEdit.com/bbtc/150176944178.gif');
+      margin: 0 auto;
+    }
+  }
+
+  .reset {
+    background: $td-color;
+    border: 1px solid $last-color;
+    color: $td-white;
+    cursor: pointer;
+    font-family: 'Fondamento';
+    padding: 5px 10px;
+    text-transform: uppercase;
+
+    &:hover {
+      opacity: .8;
+		}
+	}
+}
