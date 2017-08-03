@@ -1,8 +1,6 @@
 #!/bin/bash
 
-API="${API_ORIGIN:-https://ga-wdi-boston.herokuapp.com}"
-URL_PATH="/users"
-curl "${API}${URL_PATH}/$ID" \
+curl "http://tic-tac-toe.wdibos.com/users/{email}"
   --include \
   --request GET \
   --header "Authorization: Token token=$TOKEN"
