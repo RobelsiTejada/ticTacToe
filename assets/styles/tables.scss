@@ -1,16 +1,17 @@
 $td-color: #555;
-$cross-white: #fff;
+$td-white: #fff;
 $fire-red: #e81717;
 $last-color: #d42;
 
 table {
-  border-collapse: collapse;
+  // border-collapse: collapse;
+  height: 450px;
   margin: 0 auto;
-  width: 150px;
+  width: 450px;
 
   td {
-    border: 1px solid;
-    border-color: $td-color;
+    border: 5px solid;
+    border-color: $td-white;
     cursor: pointer;
     height: 50px;
     width: 50px;
@@ -21,22 +22,22 @@ table {
     }
 
     &.cross::before {
-      color: $cross-white;
-      content: 'x';
+      content: url('http://i44.tinypic.com/bg1h1l.jpg');
+      margin: 0 auto;
     }
 
     &.circle::before {
-      color: $fire-red;
-      content: 'o';
+      content: url('http://i39.tinypic.com/2dgncwx.jpg');
+      margin: 0 auto;
     }
   }
 
   .reset {
     background: $td-color;
     border: 1px solid $last-color;
-    color: $cross-white;
+    color: $td-white;
     cursor: pointer;
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Fondamento';
     padding: 5px 10px;
     text-transform: uppercase;
 
