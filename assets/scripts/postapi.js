@@ -16,23 +16,9 @@ const email = function (email) {
   })
 }
 
-const avatar = function (avatar) {
+const password = function (password) {
   return $.ajax({
-    url: app.host + '/players/' + avatar,
-    method: 'POST'
-  })
-}
-
-const gamepiece = function (gamepiece) {
-  return $.ajax({
-    url: app.host + '/players/' + gamepiece,
-    method: 'POST'
-  })
-}
-
-const record = function (record) {
-  return $.ajax({
-    url: app.host + '/players/' + record,
+    url: app.host + '/players/' + password,
     method: 'POST'
   })
 }
@@ -40,7 +26,5 @@ const record = function (record) {
 module.exports = {
   username,
   email,
-  avatar,
-  gamepiece,
-  record
+  password
 }

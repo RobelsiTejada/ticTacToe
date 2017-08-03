@@ -12,7 +12,7 @@ $(function () {
       const pattern = definePatternForCurrentPlayer(player)
       changeState(td, pattern)
       if (checkIfPlayerWon(table, pattern)) {
-        messages.html('Player ' + player + ' has won!!!')
+        messages.html('Player ' + player + ' is the Winner!!!')
         turn.html('')
       } else {
         player = setNextPlayer(player)
@@ -60,7 +60,7 @@ function setNextPlayer (player) {
 }
 
 function displayNextPlayer (turn, player) {
-  turn.html('Player Turn : ' + player)
+  turn.html('Player Turn : Player ' + player + '\'s turn')
 }
 
 function checkIfPlayerWon (table, pattern) {

@@ -4,10 +4,13 @@ $fire-red: #e81717;
 $last-color: #d42;
 
 table {
-  // border-collapse: collapse;
+  border-collapse: collapse;
   height: 450px;
   margin: 0 auto;
+  position: fixed;
+  text-align: center;
   width: 450px;
+
 
   td {
     border: 5px solid;
@@ -21,13 +24,15 @@ table {
       line-height: 1;
     }
 
+    // player 1
     &.cross::before {
-      content: url('http://i44.tinypic.com/bg1h1l.jpg');
+      content: url('http://m.UploadEdit.com/bbtc/1501769519854.gif');
       margin: 0 auto;
     }
 
+    // player 2
     &.circle::before {
-      content: url('http://i39.tinypic.com/2dgncwx.jpg');
+      content: url('http://m.UploadEdit.com/bbtc/150176944178.gif');
       margin: 0 auto;
     }
   }
