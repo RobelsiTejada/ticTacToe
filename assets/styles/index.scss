@@ -1,7 +1,7 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import '~//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css';
-@import './main.css';
-@import './modal.css';
-@import './gamePiece.css';
-@import './flexboard.css';
+@import './main';
+@import './tables';
+// @import './modal';
+// @import './gamePiece';
