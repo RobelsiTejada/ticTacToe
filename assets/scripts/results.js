@@ -1,7 +1,15 @@
+const checkForWins = function (moves) {
+  if (moves < 9) {
+    return win
+  } else {
+    return moves
+  }
+}
+
 const win = function () {
   if ($('#b1') === $('#b2') && $('#b2') === $('#b3') && $('#b1') === $('#b3')) {
     alert('winner')
-  } else if ($('#b1') === $('#b2') && $('#b2') === $('#b9') && $('#b1') === $('#b9')) {
+  } else if ($('#b1') === $('#b5') && $('#b5') === $('#b9') && $('#b1') === $('#b9')) {
     alert('winner')
   } else if ($('#b1') === $('#b4') && $('#b4') === $('#b7') && $('#b1') === $('#b7')) {
     alert('winner')
@@ -18,11 +26,15 @@ const win = function () {
   }
 }
 
-const tie = function () {
-
+const tie = function (moves) {
+  if (moves > 9) {
+    alert('It is a draw!!')
+  } else {
+  }
 }
 
 module.exports = {
+  checkForWins,
   win,
   tie
 }

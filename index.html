@@ -31,21 +31,21 @@
 <div class='flexboard'>
 
 <div class='flex'>
-<div id=b1 onClick='icon(this.id)'></div>
-<div id=b2 onClick='icon(this.id)'></div>
-<div id=b3 onClick='icon(this.id)'></div>
+<div id=b1></div>
+<div id=b2></div>
+<div id=b3></div>
 </div>
 
 <div class='flex2'>
-<div id=b4 onClick='icon(this.id)'></div>
-<div id=b5 onClick='icon(this.id)'></div>
-<div id=b6 onClick='icon(this.id)'></div>
+<div id=b4></div>
+<div id=b5></div>
+<div id=b6></div>
 </div>
 
 <div class='flex'>
-<div id=b7 onClick='(this.id)'></div>
-<div id=b8 onClick='(this.id)'></div>
-<div id=b9 onClick='(this.id)'></div>
+<div id=b7></div>
+<div id=b8></div>
+<div id=b9></div>
 </div>
 <button class='btn btn-primary newGame' onClick='document.location.reload(true)'>New Game</button>
 </div>
@@ -63,12 +63,14 @@
 <ul class='nav nav-tabs' id='tabContent'>
 <li class='active'><a data-toggle='tab' href='#signin'>Sign-In</a></li>
 <li><a data-toggle='tab' href='#signup'>Sign-Up</a></li>
+<li><a data-toggle='tab' href='#preferences'>Preferences</a></li>
 </ul>
 
 <div class='tab-content'>
 
 <div class='tab-pane active' id='signin'>
 <form>
+<br>
 <div class='form-group'><label form='name'>Username</label>
 <br>
 <input class='form-content' placeholder='username' type='text'>
@@ -84,6 +86,7 @@
 
 <div class='tab-pane' id='signup'>
 <form>
+<br>
 <div class='form-group'><label form='name'>Username</label>
 <br>
 <input class='form-content' placeholder='username' type='text'>
@@ -100,6 +103,35 @@
 <br>
 <input class='form-content' placeholder='confirm password' type='text'></div>
 <button class='btn btn-primary'>Submit</button>
+</form>
+</div>
+
+<div class='tab-pane' id='preferences'>
+<form>
+<br>
+<div class='form-group'><label form='name'>Change Username</label>
+<br>
+<input class='form-content' placeholder='username' type='text'>
+<br>
+<label form='name'>Select Avatar</label>
+<br>
+<input class='form-content' placeholder='email@email.com' type='text'>
+<br>
+<label form='name'>Change Password</label>
+<br>
+<input class='form-content' placeholder='password' type='text'>
+<br>
+<label form='name'>Confirm Password</label>
+<br>
+<input class='form-content' placeholder='confirm password' type='text'>
+<br>
+<label form='name'>Delete Account</label>
+<br>
+<label form='name'>Confirm Password</label>
+<br>
+<input class='form-content' placeholder='Enter password to delete' type='text'>
+<br>
+<button class='btn btn-primary'>Submit</button></div>
 </form>
 </div>
 

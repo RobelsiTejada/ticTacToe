@@ -1,17 +1,18 @@
-const userA = function () {
 
+function user (userName, email, avatar, gamePiece, victories) {
+  this.userName = userName
+  this.email = email
+  this.avatar = avatar
+  this.gamePiece = gamePiece
+  this.victories = victories
 }
 
-const userB = function () {
-
-}
-
-const userC = function () {
-
+function ai (userName, avatar) {
+  this.userName = 'Ninja Master'
+  this.avatar = avatar
 }
 
 module.exports = {
-  userA,
-  userB,
-  userC
+  user,
+  ai
 }
