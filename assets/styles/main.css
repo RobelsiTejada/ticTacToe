@@ -4,12 +4,23 @@ body {
   max-width: 600px;
   background: url('http://i41.tinypic.com/fz8zo6.jpg');
   background-size: cover;
+  background-color: #000;
 }
 
 .banner {
   text-align: center;
   font-family: 'Fondamento', cursive;
   font-size: 64px;
-  color: #FFFFFF;
+  color: #FF0101;
   margin-top: 20px;
+}
+
+.newGame {
+  position: absolute;
+  left: 2px;
+  bottom: 1px;
+  border: 3px solid #fff;
+  padding: 10px;
+  background-color: #FF0101;
+  color: #000;
 }

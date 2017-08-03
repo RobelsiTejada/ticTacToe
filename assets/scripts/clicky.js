@@ -1,7 +1,7 @@
 
 $(document).ready(function () {
   $('#b1').click(function (e) {
-
+    alert(1)
   })
   $('#b2').click(function (e) {
     alert(2)

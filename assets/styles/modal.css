@@ -2,13 +2,16 @@
   position: absolute;
   right: 2px;
   bottom: 1px;
-  border: 3px solid #73AD21;
+  border: 3px solid #ffffff;
   padding: 10px;
+  background-color: #FF0101;
+  color: #000;
 }
 
 .location {
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 600vw;
+  max-height: 200vw;
   color: #000;
   background-color: #000;
   background: url('http://i41.tinypic.com/29wjxw9.jpg');
