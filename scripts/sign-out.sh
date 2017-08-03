@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl "http://tic-tac-toe.wdibos.com/delete?id=$ID" \
+curl "http://tic-tac-toe.wdibos.com/games/delete?id=$ID" \
   --include \
   --request DELETE
 

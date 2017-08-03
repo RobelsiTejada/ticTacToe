@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl "http://tic-tac-toe.wdibos.com/post" \
+curl "http://tic-tac-toe.wdibos.com/games/post" \
   --include \
   --request POST \
   --data-urlencode ""
