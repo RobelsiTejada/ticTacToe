@@ -60,7 +60,7 @@ function setNextPlayer (player) {
 }
 
 function displayNextPlayer (turn, player) {
-  turn.html('Player Turn : Player ' + player + '\'s turn')
+  turn.html('Player ' + player + '\'s turn')
 }
 
 function checkIfPlayerWon (table, pattern) {
