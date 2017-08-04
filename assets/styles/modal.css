@@ -23,6 +23,7 @@
   position: fixed;
   max-width: 90%;
   max-height: 75%;
+  opacity: .5;
   }
 
 .close {
