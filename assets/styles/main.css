@@ -1,38 +1,36 @@
 
 body {
-  margin: 0 auto;
-  max-width: 600px;
+  margin: auto;
+  min-width: 100%;
   background: url('http://i41.tinypic.com/fz8zo6.jpg');
   background-size: cover;
   background-color: #000;
+  font-family: 'Fondamento', cursive;
+  height: auto;
+  max-height: 400px;
+  max-width: 400px;
+  position: absolute;
+  text-align: center;
+  width: auto;
 }
 
 .banner {
   text-align: center;
-  font-family: 'Fondamento', cursive;
   font-size: 64px;
   color: #1464F4;
   margin-top: 20px;
-}
-
-.tablefix {
-  text-align: center;
 }
 
 .newGame {
   position: absolute;
   left: 2px;
   bottom: 1px;
-  border: 3px solid #fff;
-  padding: 10px;
-  background-color: #1464F4;
-  color: #000;
 }
 
 .turn,
 .messages {
   margin-bottom: 10px;
-  font-size: 26px;
+  font-size: 36px;
   color: #fff;
   text-align:center;
 }

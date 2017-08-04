@@ -26,37 +26,36 @@
 <br>
 <br>
 
-<div class='container-fluid tablefix'>
-
+<div class="row">
   <div class='messages'></div>
   <div class='turn'></div>
+
   <table>
     <tr>
-      <td class='item1'></td>
-      <td class='item2'></td>
-      <td class='item3'></td>
+      <td class='box1 col-md-1 box'></td>
+      <td class='box2 col-md-1 box'></td>
+      <td class='box3 col-md-1 box'></td>
     </tr>
     <tr>
-      <td class='item4'></td>
-      <td class='item5'></td>
-      <td class='item6'></td>
+      <td class='box4 col-md-1 box'></td>
+      <td class='box5 col-md-1 box'></td>
+      <td class='box6 col-md-1 box'></td>
     </tr>
     <tr>
-      <td class='item7'></td>
-      <td class='item8'></td>
-      <td class='item9'></td>
+      <td class='box7 col-md-1 box'></td>
+      <td class='box8 col-md-1 box'></td>
+      <td class='box9 col-md-1 box'></td>
     </tr>
   </table>
 
-
 </div>
 
-<div class='modal fade location' id='access'>
+<div class='modal fade location modal-content' id='access'>
 <div class='modal-dialog'>
 <div class='modal-content'>
 
 <div class='modal-header'>
-<button class='close' data-dismiss='modal' type='button'>&times;</button>
+<button class='close' data-dismiss='modal' type='button'>X</button>
 </div>
 
 <ul class='nav nav-tabs' id='tabContent'>
@@ -112,10 +111,6 @@
 <br>
 <input class='form-content' placeholder='username' type='text'>
 <br>
-<label form='name'>Select Avatar</label>
-<br>
-<input class='form-content' placeholder='email@email.com' type='text'>
-<br>
 <label form='name'>Change Password</label>
 <br>
 <input class='form-content' placeholder='password' type='text'>
@@ -124,9 +119,10 @@
 <br>
 <input class='form-content' placeholder='confirm password' type='text'>
 <br>
-<label form='name'>Delete Account</label>
 <br>
-<label form='name'>Confirm Password</label>
+<label form='name'>Delete Account:<br>
+To delete account please enter your password below.</label>
+<br>
 <br>
 <input class='form-content' placeholder='Enter password to delete' type='text'>
 <br>
@@ -144,14 +140,16 @@
 </div>
 
 </div>
-
+<nav class="navbar navbar-default navbar-fixed-bottom">
+<div class="container">
 <div>
 <button class='btn btn-primary reset newGame'>New Game</button>
 </div>
-
 <div>
 <button class='btn btn-primary position-modal' data-target='#access' data-toggle='modal' type='button'>SignIn/SignUp</button>
 </div>
+</div>
+</nav>
 
 </body>
 

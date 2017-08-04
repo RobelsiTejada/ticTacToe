@@ -9,11 +9,25 @@
 }
 
 .location {
+  position: absolute;
   margin: 0 auto;
-  max-width: 600vw;
-  max-height: 200vw;
+  max-width: 600px;
+  max-height: 800px;
   color: #000;
   background-color: #1C86EE;
   background: url('http://i41.tinypic.com/29wjxw9.jpg');
   background-size: cover;
+}
+
+.modal-content {
+  position: fixed;
+  max-width: 90%;
+  max-height: 75%;
+  }
+
+.close {
+  color: #fff;;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
 }

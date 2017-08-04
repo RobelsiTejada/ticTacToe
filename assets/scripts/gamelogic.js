@@ -3,23 +3,23 @@ $(function () {
   const table = $('table')
   const messages = $('.messages')
   const turn = $('.turn')
-  displayNextPlayer(turn, player)
+  nextPlayer(turn, player)
 
   $('td').click(function () {
     const td = $(this)
     const state = getState(td)
     if (!state) {
-      const pattern = definePatternForCurrentPlayer(player)
+      const pattern = playerPiece(player)
       changeState(td, pattern)
-      if (checkIfPlayerWon(table, pattern)) {
-        messages.html('Player ' + player + ' is the Winner!!!')
+      if (checkForWin(table, pattern)) {
+        messages.html('Ninja ' + player + ' is the victor!!!')
         turn.html('')
       } else {
         player = setNextPlayer(player)
-        displayNextPlayer(turn, player)
+        nextPlayer(turn, player)
       }
     } else {
-      messages.html('This box is already checked')
+      messages.html('You\'re nindo is weak!!!')
     }
   })
 
@@ -27,7 +27,7 @@ $(function () {
     player = 1
     messages.html('')
     reset(table)
-    displayNextPlayer(turn, player)
+    nextPlayer(turn, player)
   })
 })
 
@@ -43,7 +43,7 @@ function changeState (td, pattern) {
   return td.addClass(pattern)
 }
 
-function definePatternForCurrentPlayer (player) {
+function playerPiece (player) {
   if (player === 1) {
     return 'cross'
   } else {
@@ -59,27 +59,27 @@ function setNextPlayer (player) {
   }
 }
 
-function displayNextPlayer (turn, player) {
-  turn.html('Player ' + player + '\'s turn')
+function nextPlayer (turn, player) {
+  turn.html('Ninja ' + player + '\'s turn')
 }
 
-function checkIfPlayerWon (table, pattern) {
+function checkForWin (table, pattern) {
   let won = 0
-  if (table.find('.item1').hasClass(pattern) && table.find('.item2').hasClass(pattern) && table.find('.item3').hasClass(pattern)) {
+  if (table.find('.box1').hasClass(pattern) && table.find('.box2').hasClass(pattern) && table.find('.box3').hasClass(pattern)) {
     won = 1
-  } else if (table.find('.item1').hasClass(pattern) && table.find('.item4').hasClass(pattern) && table.find('.item7').hasClass(pattern)) {
+  } else if (table.find('.box1').hasClass(pattern) && table.find('.box4').hasClass(pattern) && table.find('.box7').hasClass(pattern)) {
     won = 1
-  } else if (table.find('.item1').hasClass(pattern) && table.find('.item5').hasClass(pattern) && table.find('.item9').hasClass(pattern)) {
+  } else if (table.find('.box1').hasClass(pattern) && table.find('.box5').hasClass(pattern) && table.find('.box9').hasClass(pattern)) {
     won = 1
-  } else if (table.find('.item4').hasClass(pattern) && table.find('.item5').hasClass(pattern) && table.find('.item6').hasClass(pattern)) {
+  } else if (table.find('.box4').hasClass(pattern) && table.find('.box5').hasClass(pattern) && table.find('.box6').hasClass(pattern)) {
     won = 1
-  } else if (table.find('.item7').hasClass(pattern) && table.find('.item8').hasClass(pattern) && table.find('.item9').hasClass(pattern)) {
+  } else if (table.find('.box7').hasClass(pattern) && table.find('.box8').hasClass(pattern) && table.find('.box9').hasClass(pattern)) {
     won = 1
-  } else if (table.find('.item2').hasClass(pattern) && table.find('.item5').hasClass(pattern) && table.find('.item8').hasClass(pattern)) {
+  } else if (table.find('.box2').hasClass(pattern) && table.find('.box5').hasClass(pattern) && table.find('.box8').hasClass(pattern)) {
     won = 1
-  } else if (table.find('.item3').hasClass(pattern) && table.find('.item6').hasClass(pattern) && table.find('.item9').hasClass(pattern)) {
+  } else if (table.find('.box3').hasClass(pattern) && table.find('.box6').hasClass(pattern) && table.find('.box9').hasClass(pattern)) {
     won = 1
-  } else if (table.find('.item3').hasClass(pattern) && table.find('.item5').hasClass(pattern) && table.find('.item7').hasClass(pattern)) {
+  } else if (table.find('.box3').hasClass(pattern) && table.find('.box5').hasClass(pattern) && table.find('.box7').hasClass(pattern)) {
     won = 1
   }
   return won
