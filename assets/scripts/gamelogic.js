@@ -19,7 +19,7 @@ $(function () {
         nextPlayer(turn, player)
       }
     } else {
-      messages.html('You\'re nindo is weak!!!')
+      messages.html('You\'re nindo is weak, try again!!!')
     }
   })
 
