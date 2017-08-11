@@ -14,6 +14,7 @@ const onSignUp = function (event) {
 
 const signUpHandler = () => {
   $('#signUp').on('submit', onSignUp)
+  event.preventDefault()
 }
 
 const signOut = function (event) {
@@ -27,6 +28,7 @@ const signOut = function (event) {
 
 const signOutHandler = () => {
   $('#signOut').on('submit', signOut)
+  event.preventDefault()
 }
 
 const changePassword = function (event) {
@@ -40,6 +42,7 @@ const changePassword = function (event) {
 
 const changePasswordHandler = () => {
   $('#changePassword').on('submit', changePassword)
+  event.preventDefault()
 }
 
 const signIn = function (event) {
@@ -53,6 +56,7 @@ const signIn = function (event) {
 
 const signInHandler = () => {
   $('#signIn').on('submit', signIn)
+  event.preventDefault()
 }
 
 module.exports = {
