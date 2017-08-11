@@ -1,6 +1,6 @@
 'use strict'
 
-const setAPIOrigin = require('~/lib/set-api-origin')
+const setAPIOrigin = require('./../../lib/set-api-origin')
 const config = require('./config')
 
 $(() => {
@@ -16,12 +16,12 @@ require('./gamelogic')
 // use require without a reference to ensure a file is bundled
 // require('./example');
 //
-const playerEvents = require('./events')
+const userEvents = require('./events')
 
 // On document ready
 $(() => {
-  $('#games-search').on('submit', playerEvents.onGetplayers)
-  $('#signIn').on('submit', playerEvents.onGetplayer)
-  $('#signOut').on('submit', playerEvents.onDeleteplayer)
-  $('#update').on('submit', playerEvents.onUpdateplayer)
+  $('#games-search').on('submit', userEvents.onGetusers)
+  $('#signIn').on('submit', userEvents.onGetuser)
+  $('#signOut').on('submit', userEvents.onDeleteuser)
+  $('#update').on('submit', userEvents.onUpdateuser)
 })

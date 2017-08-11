@@ -2,7 +2,7 @@
 
 const gameApi = require('./api.js')
 const gameUi = require('./ui.js')
-const getFormFields = require(`~/lib/get-form-fields`)
+const getFormFields = require(`./../../lib/get-form-fields`)
 
 const onSignUp = function (event) {
   const data = getFormFields(this)
@@ -20,7 +20,7 @@ const signOut = function (event) {
   event.preventDefault()
 
   const data = getFormFields(event.target)
-  gameApi.destroy(data.player.id)
+  gameApi.destroy(data.user.id)
     .then(gameUi.onDeleteSuccess)
     .catch(gameUi.onError)
 }

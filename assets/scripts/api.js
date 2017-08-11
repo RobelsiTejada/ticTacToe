@@ -1,6 +1,6 @@
 'use strict'
 
-const app = require('../app.js')
+const app = require('./app.js')
 
 const signUp = (data) =>
   new Promise(function (resolve, reject) {
@@ -15,28 +15,28 @@ const signUp = (data) =>
 
 const index = function () {
   return $.ajax({
-    url: app.host + '/players',
+    url: app.host + '/users',
     method: 'GET'
   })
 }
 
 const show = function (id) {
   return $.ajax({
-    url: app.host + '/players/' + id,
+    url: app.host + '/users/' + id,
     method: 'GET'
   })
 }
 
 const destroy = function (id) {
   return $.ajax({
-    url: app.host + '/players/' + id,
+    url: app.host + '/users/' + id,
     method: 'DELETE'
   })
 }
 
 const update = function (data) {
   return $.ajax({
-    url: app.host + '/players/' + data.player.id,
+    url: app.host + '/users/' + data.user.id,
     method: 'PATCH',
     data
   })
@@ -44,7 +44,7 @@ const update = function (data) {
 
 const create = function (data) {
   return $.ajax({
-    url: app.host + '/players',
+    url: app.host + '/users',
     method: 'POST',
     data
   })

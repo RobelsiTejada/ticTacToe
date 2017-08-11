@@ -12,10 +12,10 @@ const onSuccess = function (data) {
   console.log('data is ', data)
   if (!data) {
     console.warn('Either you deleted something, or something went wrong.')
-  } else if (data.player) {
-    console.log(data.player)
+  } else if (data.user) {
+    console.log(data.user)
   } else {
-    console.table(data.players)
+    console.table(data.users)
   }
 }
 
@@ -28,11 +28,11 @@ const onError = function (response) {
 }
 
 const onDeleteSuccess = function () {
-  console.log('player was successfully signed out.')
+  console.log('user was successfully signed out.')
 }
 
 const onCreateSuccess = function (data) {
-  console.log(data.player)
+  console.log(data.user)
 }
 
 module.exports = {
