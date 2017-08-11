@@ -12,7 +12,7 @@ const onSignUp = function (event) {
     .catch(gameUi.signUpFailure)
 }
 
-const signUpHandler = () => {
+const signUpHandler = (event) => {
   event.preventDefault()
   $('#signUp').on('submit', onSignUp)
 }
@@ -26,7 +26,7 @@ const signOut = function (event) {
     .catch(gameUi.onError)
 }
 
-const signOutHandler = () => {
+const signOutHandler = (event) => {
   $('#signOut').on('submit', signOut)
   event.preventDefault()
 }
@@ -40,7 +40,7 @@ const changePassword = function (event) {
     .catch(gameUi.onError)
 }
 
-const changePasswordHandler = () => {
+const changePasswordHandler = (event) => {
   $('#update').on('submit', changePassword)
   event.preventDefault()
 }
@@ -54,7 +54,7 @@ const signIn = function (event) {
     .catch(gameUi.onError)
 }
 
-const signInHandler = () => {
+const signInHandler = (event) => {
   $('#signIn').on('submit', signIn)
   event.preventDefault()
 }

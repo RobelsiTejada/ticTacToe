@@ -4,6 +4,7 @@ $(function () {
   const table = $('table')
   const messages = $('.messages')
   const turn = $('.turn')
+  let moveCount = 0
   nextPlayer(turn, player)
 
   $('td').click(function () {
@@ -11,9 +12,13 @@ $(function () {
     const state = getState(td)
     if (!state) {
       const pattern = playerPiece(player)
+      moveCount++
       changeState(td, pattern)
       if (checkForWin(table, pattern)) {
         messages.html('Ninja ' + player + ' is the victor!!!')
+        turn.html('')
+      } else if (moveCount >= 9) {
+        messages.html('Match draw, pathetic!!!')
         turn.html('')
       } else {
         player = setNextPlayer(player)
@@ -29,6 +34,7 @@ $(function () {
     messages.html('')
     reset(table)
     nextPlayer(turn, player)
+    moveCount = 0
   })
 })
 
