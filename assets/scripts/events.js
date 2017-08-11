@@ -13,8 +13,8 @@ const onSignUp = function (event) {
 }
 
 const signUpHandler = () => {
-  $('#signUp').on('submit', onSignUp)
   event.preventDefault()
+  $('#signUp').on('submit', onSignUp)
 }
 
 const signOut = function (event) {
@@ -41,7 +41,7 @@ const changePassword = function (event) {
 }
 
 const changePasswordHandler = () => {
-  $('#changePassword').on('submit', changePassword)
+  $('#update').on('submit', changePassword)
   event.preventDefault()
 }
 
