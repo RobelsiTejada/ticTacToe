@@ -2,7 +2,7 @@
 
 const gameApi = require('./api.js')
 const gameUi = require('./ui.js')
-const getFormFields = require(`../../../lib/get-form-fields`)
+const getFormFields = require(`~/lib/get-form-fields`)
 
 const onSignUp = function (event) {
   const data = getFormFields(this)
