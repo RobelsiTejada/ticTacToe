@@ -1,5 +1,5 @@
 'use strict'
 
-const getFormFields = require('../../../lib/get-form-fields')
-
-module.exports = getFormFields
+module.exports = {
+  host: 'https://aqueous-atoll-85096.herokuapp.com'
+}

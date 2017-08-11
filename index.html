@@ -21,27 +21,26 @@
 </head>
 
 <body class='container-fluid'>
-<p class='banner'>Tic Tac Toe Ninja</p>
-
-<div class="row">
+<h1 class='banner'>Tic Tac Toe Ninja</h1>
+<div class='row'>
   <div class='messages'></div>
   <div class='turn'></div>
 
   <table>
     <tr>
-      <td class='box1 col-md-1 box'></td>
-      <td class='box2 col-md-1 box'></td>
-      <td class='box3 col-md-1 box'></td>
+      <td class='box1 col-xs-1 box'></td>
+      <td class='box2 col-xs-1 box'></td>
+      <td class='box3 col-xs-1 box'></td>
     </tr>
     <tr>
-      <td class='box4 col-md-1 box'></td>
-      <td class='box5 col-md-1 box'></td>
-      <td class='box6 col-md-1 box'></td>
+      <td class='box4 col-xs-1 box'></td>
+      <td class='box5 col-xs-1 box'></td>
+      <td class='box6 col-xs-1 box'></td>
     </tr>
     <tr>
-      <td class='box7 col-md-1 box'></td>
-      <td class='box8 col-md-1 box'></td>
-      <td class='box9 col-md-1 box'></td>
+      <td class='box7 col-xs-1 box'></td>
+      <td class='box8 col-xs-1 box'></td>
+      <td class='box9 col-xs-1 box'></td>
     </tr>
   </table>
 
@@ -66,64 +65,48 @@
 <div class='tab-pane active' id='signin'>
 <form>
 <br>
-<div class='form-group'><label form='name'>Username</label>
+<div class='form-group'><label form='name'>Email</label>
 <br>
-<input class='form-content' placeholder='username' type='text'>
+<input type='text' name='credentials[email]' placeholder='Email'>
 <br>
 <label form='name'>Password</label>
 <br>
-<input class='form-content' placeholder='password' type='text'><br>
+<input type='password' name='credentials[password]' placeholder='Password'>
 <br>
-<button class='btn btn-primary'>Submit</button>
+<input type='submit' name='submit' class='submit' value='Log In'>
 </div>
 </form>
 </div>
 
 <div class='tab-pane' id='signup'>
-<form>
+<form id='registration'>
 <br>
-<div class='form-group'><label form='name'>Username</label>
+<label for='username'>Email</label>
 <br>
-<input class='form-content' placeholder='username' type='text'>
+<input type='text' name='credentials[email]' placeholder='Email'>
 <br>
-<label form='name'>Email</label>
+<label for='password'>Password</label>
 <br>
-<input class='form-content' placeholder='email@email.com' type='text'>
+<input type='password' name='credentials[password]' placeholder='Password'>
 <br>
-<label form='name'>Password</label>
+<label for='password-confirm'>Password</label>
 <br>
-<input class='form-content' placeholder='password' type='text'>
+<input type='password' name='credentials[password_confirmation]' placeholder='Confirm Password'>
 <br>
-<label form='name'>Confirm Password</label>
-<br>
-<input class='form-content' placeholder='confirm password' type='text'></div>
-<button class='btn btn-primary'>Submit</button>
+<input type='submit' name='submit' class='submit' value='Register'>
 </form>
 </div>
 
 <div class='tab-pane' id='preferences'>
 <form>
 <br>
-<div class='form-group'><label form='name'>Change Username</label>
+<div class='form-group'><label form='name'>Change Password</label>
 <br>
-<input class='form-content' placeholder='username' type='text'>
+<input type='password' name='passwords[old]' placeholder='Old Password'>
 <br>
-<label form='name'>Change Password</label>
+<input type='password' name='passwords[new]' placeholder='New Password'>
 <br>
-<input class='form-content' placeholder='password' type='text'>
-<br>
-<label form='name'>Confirm Password</label>
-<br>
-<input class='form-content' placeholder='confirm password' type='text'>
-<br>
-<br>
-<label form='name'>Delete Account:<br>
-To delete account please enter your password below.</label>
-<br>
-<br>
-<input class='form-content' placeholder='Enter password to delete' type='text'>
-<br>
-<button class='btn btn-primary'>Submit</button></div>
+<input type='submit' name='submit' class='submit' value='Change Password'></div>
 </form>
 </div>
 
@@ -136,8 +119,8 @@ To delete account please enter your password below.</label>
 </div>
 
 </div>
-<nav class="navbar navbar-default navbar-fixed-bottom">
-<div class="container">
+<nav class='navbar navbar-default navbar-fixed-bottom'>
+<div class='container'>
 <div>
 <button class='btn btn-primary reset newGame'>New Game</button>
 </div>

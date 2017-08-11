@@ -1,23 +1,27 @@
 'use strict'
 
-const setAPIOrigin = require('../../lib/set-api-origin')
+const setAPIOrigin = require('~/lib/set-api-origin')
 const config = require('./config')
 
 $(() => {
   setAPIOrigin(location, config)
 })
 
-// use require without a reference to ensure a file is bundled
-// require('./main')
-// require('./getapi')
-// require('./postapi')
-// require('./patchapi')
-// require('./deleteapi')
+// use require with a reference to bundle the file and use it in this file
+// const example = require('./example');
+require('./main')
+require('./api')
+require('./ui')
 require('./gamelogic')
-
-/* const authEvents = require('./events')
+// use require without a reference to ensure a file is bundled
+// require('./example');
+//
+const playerEvents = require('./events')
 
 // On document ready
 $(() => {
-  authEvents.addHandlers()
-}) */
+  $('#games-search').on('submit', playerEvents.onGetplayers)
+  $('#signIn').on('submit', playerEvents.onGetplayer)
+  $('#signOut').on('submit', playerEvents.onDeleteplayer)
+  $('#update').on('submit', playerEvents.onUpdateplayer)
+})

@@ -3,7 +3,7 @@ Deployed Site URL: https://robelsitejada.github.io/ticTacToe/
 
 Tic-tac-toe:
 
-A completed game of Tic-tac-toe,
+A completed game of Tic-tac-toe
 Players	2
 Setup time	Minimal
 Playing time	~1 minute

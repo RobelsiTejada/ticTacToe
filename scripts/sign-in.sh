@@ -1,8 +1,17 @@
 #!/bin/bash
 
-curl "http://tic-tac-toe.wdibos.com/games" \
+API="${API_ORIGIN:-http://tic-tac-toe.wdibos.com/games}"
+URL_PATH="/sign-in"
+curl "${API}${URL_PATH}" \
   --include \
   --request POST \
-  --data-urlencode ""
+  --header "Content-Type: application/json" \
+  --data '{
+    "credentials": {
+      "email": "'"${EMAIL}"'",
+      "password": "'"${PASSWORD}"'",
+      "password_confirmation": "'"${PASSWORD}"'"
+    }
+  }'
 
 echo

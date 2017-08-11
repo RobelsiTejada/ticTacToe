@@ -4,24 +4,20 @@ $button-black: #000;
 $button-color: #1464f4;
 
 table {
-  height: 60vw;
   left: 0;
   margin: auto;
-  max-height: 400px;
-  max-width: 400px;
-  min-height: 50px;
-  min-width: 50px;
-  position: absolute;
+  max-height: 40vw;
+  max-width: 30vw;
+  min-height: 20vw;
+  min-width: 25vw;
   right: 0;
   text-align: center;
-  width: 60vw;
 
   td {
     border: 5px solid;
     border-color: $td-white;
     cursor: pointer;
     height: 75px;
-    width: 75px;
 
     &::before {
       font-size: 1.5em;
@@ -31,13 +27,11 @@ table {
     // player 1
     &.cross::before {
       content: url('http://m.UploadEdit.com/bbtc/1501769519854.gif');
-      margin: 0 auto;
     }
 
     // player 2
     &.circle::before {
       content: url('http://m.UploadEdit.com/bbtc/150176944178.gif');
-      margin: 0 auto;
     }
   }
 }

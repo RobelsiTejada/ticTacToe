@@ -1,3 +1,4 @@
+
 $(function () {
   let player = 1
   const table = $('table')
