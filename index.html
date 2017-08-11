@@ -57,7 +57,7 @@
 <ul class='nav nav-tabs' id='tabContent'>
 <li class='active'><a data-toggle='tab' href='#signin'>Sign-In</a></li>
 <li><a data-toggle='tab' href='#signup'>Sign-Up</a></li>
-<li><a data-toggle='tab' href='#preferences'>Preferences</a></li>
+<li><a data-toggle='tab' href='#changePassword'>Change Password</a></li>
 </ul>
 
 <div class='tab-content'>
@@ -73,7 +73,7 @@
 <br>
 <input type='password' name='credentials[password]' placeholder='Password'>
 <br>
-<input type='submit' name='submit' class='submit' value='Log In'>
+<input id='signIn' type='submit' name='submit' class='submit' value='Log In'>
 </div>
 </form>
 </div>
@@ -93,11 +93,11 @@
 <br>
 <input type='password' name='credentials[password_confirmation]' placeholder='Confirm Password'>
 <br>
-<input type='submit' name='submit' class='submit' value='Register'>
+<input id='signUp' type='submit' name='submit' class='submit' value='Register'>
 </form>
 </div>
 
-<div class='tab-pane' id='preferences'>
+<div class='tab-pane' id='changepassword'>
 <form>
 <br>
 <div class='form-group'><label form='name'>Change Password</label>
@@ -106,7 +106,7 @@
 <br>
 <input type='password' name='passwords[new]' placeholder='New Password'>
 <br>
-<input type='submit' name='submit' class='submit' value='Change Password'></div>
+<input id='changePassword' type='submit' name='submit' class='submit' value='Change Password'></div>
 </form>
 </div>
 

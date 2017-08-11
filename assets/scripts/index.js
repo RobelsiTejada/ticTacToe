@@ -20,8 +20,8 @@ const userEvents = require('./events')
 
 // On document ready
 $(() => {
-  $('#games-search').on('submit', userEvents.onGetusers)
-  $('#signIn').on('submit', userEvents.onGetuser)
-  $('#signOut').on('submit', userEvents.onDeleteuser)
-  $('#update').on('submit', userEvents.onUpdateuser)
+  $('#game').on('submit', userEvents.onGetUsers)
+  $('#signIn').on('submit', userEvents.onGetUser)
+  $('#signOut').on('submit', userEvents.onDeleteUser)
+  $('#update').on('submit', userEvents.onUpdateUser)
 })
