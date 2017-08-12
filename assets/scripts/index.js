@@ -9,7 +9,7 @@ $(() => {
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example');
-require('./main')
+require('./app')
 require('./api')
 require('./ui')
 require('./gamelogic')
@@ -20,8 +20,8 @@ const userEvents = require('./events')
 
 // On document ready
 $(() => {
-  $('#game').on('submit', userEvents.onGetUsers)
-  $('#signIn').on('submit', userEvents.onGetUser)
-  $('#signOut').on('submit', userEvents.onDeleteUser)
-  $('#update').on('submit', userEvents.onUpdateUser)
+  $('#signUp').on('submit', userEvents.signUp)
+  $('#signIn').on('submit', userEvents.signIn)
+  $('#signOut').on('submit', userEvents.signOut)
+  $('#update').on('submit', userEvents.changePassword)
 })

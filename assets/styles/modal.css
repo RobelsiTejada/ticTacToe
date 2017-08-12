@@ -11,8 +11,8 @@
 .location {
   position: absolute;
   margin: 0 auto;
-  max-width: 600px;
-  max-height: 800px;
+  max-width: 60vw;
+  max-height: 80vw;
   color: #000;
   background-color: #ff0000;
   background: url('http://cdn.wallpapersafari.com/37/74/hqYp0w.jpg');

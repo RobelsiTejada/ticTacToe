@@ -1,7 +1,5 @@
 $td-color: #555;
 $td-white: #fff;
-$button-black: #000;
-$button-color: #ff0000;
 
 table {
   left: 0;
@@ -35,20 +33,3 @@ table {
     }
   }
 }
-
-.reset {
-  background: $td-color;
-  background-color: $button-color;
-  border: 3px solid $td-white;
-  bottom: 1px;
-  color: $button-black;
-  cursor: pointer;
-  font-family: 'Fondamento';
-  left: 2px;
-  padding: 10px;
-  position: absolute;
-
-  &:hover {
-    opacity: .8;
-		}
-	}

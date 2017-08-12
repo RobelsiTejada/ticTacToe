@@ -9,7 +9,7 @@ body {
   height: auto;
   max-height: 400px;
   max-width: 400px;
-  position: absolute;
+  position: fixed;
   text-align: center;
   width: auto;
 }

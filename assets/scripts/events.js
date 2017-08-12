@@ -2,33 +2,42 @@
 
 const gameApi = require('./api.js')
 const gameUi = require('./ui.js')
+const gameLogic = require('./gamelogic.js')
 const getFormFields = require(`./../../lib/get-form-fields`)
 
-const onSignUp = function (event) {
-  const data = getFormFields(this)
+const signUp = function (event) {
   event.preventDefault()
-  gameApi.signUp(data)
-    .then(gameUi.signUpSuccess)
-    .catch(gameUi.signUpFailure)
+  const data = getFormFields(this)
+  if (data.credentials.password !== data.credentials.password_confirmation) {
+    alert('Passwords do not match')
+  } else {
+    event.preventDefault()
+    gameApi.signUp(data)
+      .then(gameUi.signUpSuccess)
+      .catch(gameUi.signUpFailure)
+    $('table').show()
+    $('access').hide()
+  }
 }
 
-const signUpHandler = (event) => {
+const signIn = function (event) {
   event.preventDefault()
-  $('#signUp').on('submit', onSignUp)
+
+  const data = getFormFields(event.target)
+  gameApi.signOut(data)
+    .then(gameUi.signInSuccess)
+    .catch(gameUi.signInFailure)
+  $('table').show()
+  $('access').hide()
 }
 
 const signOut = function (event) {
   event.preventDefault()
 
   const data = getFormFields(event.target)
-  gameApi.destroy(data.user.id)
-    .then(gameUi.onDeleteSuccess)
+  gameApi.destroy(data)
+    .then(gameUi.signOutSuccess)
     .catch(gameUi.onError)
-}
-
-const signOutHandler = (event) => {
-  $('#signOut').on('submit', signOut)
-  event.preventDefault()
 }
 
 const changePassword = function (event) {
@@ -36,36 +45,51 @@ const changePassword = function (event) {
 
   const data = getFormFields(event.target)
   gameApi.update(data)
-    .then(gameUi.onUpdateSuccess)
+    .then(gameUi.updateSuccess)
     .catch(gameUi.onError)
 }
 
-const changePasswordHandler = (event) => {
-  $('#update').on('submit', changePassword)
+const createGame = function (event) {
   event.preventDefault()
-}
-
-const signIn = function (event) {
-  event.preventDefault()
-
-  const data = getFormFields(event.target)
-  gameApi.create(data)
-    .then(gameUi.onCreateSuccess)
+  gameLogic.newGame()
+  gameApi.createGame()
+    .then(gameUi.postSuccess)
     .catch(gameUi.onError)
 }
 
-const signInHandler = (event) => {
+const makeMove = function (event) {
+  event.preventDefault()
+  const data = gameLogic.gameValues
+  gameApi.makeMove(data.i, data.v, data.isOver)
+    .then(gameUi.moveSuccess)
+    .catch(gameUi.onError)
+}
+
+const getGames = function (event) {
+  event.preventDefault()
+  // console.log('here')
+  gameApi.retrieveGames()
+    .then(gameUi.gameSuccess)
+    .catch(gameUi.error)
+}
+
+const addHandlers = () => {
+  $('#signUp').on('submit', signUp)
   $('#signIn').on('submit', signIn)
-  event.preventDefault()
+  $('#signOut').on('submit', signOut)
+  $('#changePassword').on('submit', changePassword)
+  $('#newGame').on('click', createGame)
+  $('.table').on('click', makeMove)
+  $('#getGames').on('click', getGames)
 }
 
 module.exports = {
-  onSignUp,
+  signUp,
   signOut,
   changePassword,
   signIn,
-  signUpHandler,
-  signOutHandler,
-  changePasswordHandler,
-  signInHandler
+  createGame,
+  makeMove,
+  getGames,
+  addHandlers
 }
