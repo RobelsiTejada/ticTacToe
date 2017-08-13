@@ -19,7 +19,7 @@ const signUp = function (data) {
 
 const signIn = function (data) {
   return $.ajax({
-    url: app.host + '/users/' + app.user.id,
+    url: app.host + '/users/',
     method: 'GET',
     data: {
       'credentials': {
@@ -60,7 +60,6 @@ const createGame = function () {
       Authorization: 'Token token=' + app.user.token
     },
     success: function (response) {
-      // console.log(response)
     }
   })
 }
@@ -82,7 +81,6 @@ const makeMove = function (index, value, over) {
     headers: {
       Authorization: 'Token token=' + app.user.token
     },
-    // These values retrieved from an updated object in placePiece.js
     data: {
       'game': {
         'table': {

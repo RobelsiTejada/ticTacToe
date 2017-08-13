@@ -24,7 +24,7 @@ const signIn = function (event) {
   event.preventDefault()
 
   const data = getFormFields(event.target)
-  gameApi.signOut(data)
+  gameApi.signIn(data)
     .then(gameUi.signInSuccess)
     .catch(gameUi.signInFailure)
   $('table').show()
@@ -35,7 +35,7 @@ const signOut = function (event) {
   event.preventDefault()
 
   const data = getFormFields(event.target)
-  gameApi.destroy(data)
+  gameApi.signOut(data)
     .then(gameUi.signOutSuccess)
     .catch(gameUi.onError)
 }

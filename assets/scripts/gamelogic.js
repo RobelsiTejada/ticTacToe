@@ -18,7 +18,7 @@ $(function () {
     const td = $(this)
     const state = getState(td) // Checks if board piece has already been taken
 
-    if (!state) {
+    if (state) {
       const pattern = playerPiece(player) // selects player and assigns player a piece X or O
       moveCount++
       changeState(td, pattern) // Checks if board piece has already been taken
@@ -47,9 +47,9 @@ $(function () {
 // Checks if board piece has already been taken
 function getState (td) {
   if (td.hasClass('cross') || td.hasClass('circle')) {
-    return 1
-  } else {
     return 0
+  } else {
+    return 1
   }
 }
 // if empty adds the class to corresponding player

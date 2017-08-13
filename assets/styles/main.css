@@ -2,7 +2,7 @@
 body {
   margin: auto;
   min-width: 100%;
-  background: url('http://cdn.wallpapersafari.com/5/89/W3d9rU.jpg');
+  background-image: url('./images/modal.jpg');
   background-size: cover;
   background-color: #000;
   font-family: 'Fondamento', cursive;
