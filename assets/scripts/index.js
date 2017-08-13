@@ -20,8 +20,7 @@ const userEvents = require('./events')
 
 // On document ready
 $(() => {
-  $('#signUp').on('submit', userEvents.signUp)
-  $('#signIn').on('submit', userEvents.signIn)
-  $('#signOut').on('submit', userEvents.signOut)
-  $('#update').on('submit', userEvents.changePassword)
+  $('.game-board').hide()
+  setAPIOrigin(location, config)
+  userEvents.addHandlers()
 })

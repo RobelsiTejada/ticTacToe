@@ -2,6 +2,10 @@
 
 const signUpSuccess = (data) => {
   console.log(data)
+  $('table').show()
+  $('.modal').modal('hide')
+  $('.messages').html('')
+  $('.turn').html('Ninja 1\'s turn')
 }
 
 const signUpFailure = (error) => {
@@ -10,6 +14,10 @@ const signUpFailure = (error) => {
 
 const signInSuccess = (data) => {
   console.log(data)
+  $('table').show()
+  $('.modal').modal('hide')
+  $('.messages').html('')
+  $('.turn').html('Ninja 1\'s turn')
 }
 
 const signInFailure = (error) => {

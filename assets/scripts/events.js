@@ -15,10 +15,6 @@ const signUp = function (event) {
     gameApi.signUp(data)
       .then(gameUi.signUpSuccess)
       .catch(gameUi.signUpFailure)
-    $('table').show()
-    $('.modal').modal('hide')
-    $('.messages').html('')
-    $('.turn').html('Ninja 1\'s turn')
   }
 }
 
@@ -29,10 +25,6 @@ const signIn = function (event) {
   gameApi.signIn(data)
     .then(gameUi.signInSuccess)
     .catch(gameUi.signInFailure)
-  $('table').show()
-  $('.modal').modal('hide')
-  $('.messages').html('')
-  $('.turn').html('Ninja 1\'s turn')
 }
 
 const signOut = function (event) {

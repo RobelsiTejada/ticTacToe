@@ -1,6 +1,7 @@
 require('./app.js')
 require('./events.js')
 require('./api.js')
+require('./ui.js')
 
 // on page load
 $(function () {
