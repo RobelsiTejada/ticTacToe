@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl "http://tic-tac-toe.wdibos.com/games/post" \
+curl "https://aqueous-atoll-85096.herokuapp.com/games/post" \
   --include \
   --request POST \
   --data-urlencode ""

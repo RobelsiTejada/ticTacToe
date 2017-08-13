@@ -3,7 +3,6 @@
 const app = require('./app.js')
 
 const signUp = function (data) {
-  console.log(data)
   return $.ajax({
     url: app.host + '/sign-up/',
     method: 'POST',
@@ -58,8 +57,6 @@ const createGame = function () {
     url: app.host + '/games',
     headers: {
       Authorization: 'Token token=' + app.user.token
-    },
-    success: function (response) {
     }
   })
 }

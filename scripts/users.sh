@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl "http://tic-tac-toe.wdibos.com/games/users" \
+curl "https://aqueous-atoll-85096.herokuapp.com/games/users" \
   --include \
   --request GET \
   --header "Authorization: Token token=$TOKEN"

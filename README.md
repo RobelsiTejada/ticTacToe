@@ -1,4 +1,3 @@
-
 Deployed Site URL: https://robelsitejada.github.io/ticTacToe/
 
 Tic-tac-toe:
@@ -23,8 +22,10 @@ Project plan: 4 cycles:
 4th cycle - Cleaning up code and final front end enhancements
 
 Unsolved Items:
--API connectivity is not functional
+-API connectivity is not fully functional
 -Authemtication not defined
--Game tie is not declared
 -When game is over empty boxes are still clickable
 -Win count has not been instantiated
+
+Future features:
+-Game AI (ability to play against AI or another player(locally or remotely))

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-API="${API_ORIGIN:-http://tic-tac-toe.wdibos.com/games}"
+API="${API_ORIGIN:-https://aqueous-atoll-85096.herokuapp.com}"
 URL_PATH="/change-password"
 curl "${API}${URL_PATH}/${ID}" \
   --include \
