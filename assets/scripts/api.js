@@ -18,7 +18,7 @@ const signUp = function (data) {
 
 const signIn = function (data) {
   return $.ajax({
-    url: app.host + '/users/',
+    url: app.host + '/users/'.id,
     method: 'GET',
     data: {
       'credentials': {

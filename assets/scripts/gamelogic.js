@@ -21,19 +21,21 @@ $(function () {
     if (state) {
       const pattern = playerPiece(player) // selects player and assigns player a piece X or O
       moveCount++
-      changeState(td, pattern) // Checks if board piece has already been taken
+      changeState(td, pattern) // if empty adds the class of corresponding player
       if (checkForWin(table, pattern)) { // Checks for win
         messages.html('Ninja ' + player + ' is the victor!!!')
         turn.html('')
         reset(table)
         nextPlayer(turn, player)
         moveCount = 0
+        results(player)
       } else if (moveCount >= 9) { // Checks for draw
         messages.html('Match draw, pathetic!!!')
         turn.html('')
         reset(table)
         nextPlayer(turn, player)
         moveCount = 0
+        results()
       } else {
         player = setNextPlayer(player) // let next player know its their turn
         nextPlayer(turn, player)
@@ -44,6 +46,21 @@ $(function () {
     }
   })
 })
+
+function results (player) {
+  const ninja1wins = $('.ninja1wins')
+  const ninja2wins = $('.ninja2wins')
+  const draw = $('.draw')
+  let result = ('.result')
+
+  if (player === 1) {
+    return (ninja1wins.html(result = result++))
+  } else if (player === 2) {
+    return (ninja2wins.html(result = result++))
+  } else {
+    return (draw.html(result = result++))
+  }
+}
 // Checks if board piece has already been taken
 function getState (td) {
   if (td.hasClass('cross') || td.hasClass('circle')) {
@@ -98,6 +115,7 @@ function checkForWin (table, pattern) {
   }
   return won
 }
+
 // for resetting table if win or draw occurs
 function reset (table) {
   table.find('td').each(function () {
