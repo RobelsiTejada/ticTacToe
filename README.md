@@ -21,6 +21,8 @@ Project plan: 4 cycles:
 3rd cycle - Adding user creation/assignments and sign-in/sign-out (RestAPI)
 4th cycle - Cleaning up code and final front end enhancements
 
+Original wireframe: http://tinypic.com/r/spx4x0/9
+
 Unsolved Items:
 -API connectivity is not fully functional
 -Authemtication not defined
