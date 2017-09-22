@@ -48,7 +48,7 @@
   </div>
   <div class='turn'></div>
 
-  <div class='row'>
+  <!-- <div class='row'>
   <div class='gameResults'>
     <h3 class='col-xs-1'>Ninja1: <input class='result'></h3>
       <div class='col-xs-2'></div>
@@ -56,98 +56,109 @@
       <div class='col-xs-2'></div>
       <h3 class='col-xs-1'>Draw: <input class='result'></h3>
 </div>
-</div>
+</div> -->
 
-  <div class='modal fade location modal-content' id='access'>
-    <div class='modal-dialog'>
-      <div class='modal-content'>
+<div id="newpassword">
+    <form id="change-password">
+      <div class="form-group">
+        <h4>Change Password:</h4><div><input type="password" name="passwords[old]" placeholder="Old Password" class="form-control col-xs-1 box"><input type="password" name="passwords[new]" placeholder="New Password" class="form-control col-xs-1 box">
+        <button type="submit" class="btn btn-outline-primary btn-lg" name="submit">Update</button></div>
+      </div>
+    </form>
+  </div>
 
-        <div class='modal-header'>
-          <button class='close' data-dismiss='modal' type='button'>X</button>
+  <div class="modal fade location modal-content" id="access">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h4>Fantasy Sports Leagues</h4>
         </div>
 
-        <ul class='nav nav-tabs' id='tabContent'>
-          <li class='active'><a data-toggle='tab' href='#signin'>Sign-In</a></li>
-          <li><a data-toggle='tab' href='#signup'>Sign-Up</a></li>
-          <li><a data-toggle='tab' href='#update'>Change Password</a></li>
+        <ul class="nav nav-tabs" id="tabContent">
+          <li class="active"><a data-toggle="tab" href="#loginform">Sign-In</a></li>
+          <li><a data-toggle="tab" href="#newuserform">Sign-Up</a></li>
         </ul>
 
-        <div class='tab-content'>
+        <div class="tab-content">
 
-          <div class='tab-pane active' id='signin'>
-            <form id='signIn'>
-              <br>
-              <div class='form-group'><label form='name'>Email</label>
-                <br>
-                <input type='text' name='credentials[email]' placeholder='Email'>
-                <br>
-                <label form='name'>Password</label>
-                <br>
-                <input type='password' name='credentials[password]' placeholder='Password'>
-                <br>
-                <input type='submit' name='submit' class='submit'>
+          <div class="tab-pane active" id="loginform">
+            <form id="sign-in">
+              <div class="form-group" id="login">
+                <h4>Login</h4>
+                <input type="text" class="form-control col-xs-1 box" name="credentials[email]" value="" placeholder="Email">
+                <input type="password" class="form-control col-xs-1 box" name="credentials[password]" value="" placeholder="Password">
+                <button type="submit" class="btn btn-outline-primary btn-lg">Login</button>
               </div>
             </form>
+            <div id="logedin">
+              <h4>
+              You have successfully signed up!<br>
+              <button class="btn btn-outline-primary btn-lg" data-dismiss="modal" type="button">Homepage</button>
+            </h4>
+            </div>
+            <div id="loginerrorp">
+              <h4>
+              The passwords you entered is not correct!
+              <br>
+              Please make sure your password is correct and try again.
+            </h4>
+            </div>
           </div>
 
-          <div class='tab-pane' id='signup'>
-            <form id='signUp'>
-              <br>
-              <label for='username'>Email</label>
-              <br>
-              <input type='text' name='credentials[email]' placeholder='Email'>
-              <br>
-              <label for='password'>Password</label>
-              <br>
-              <input type='password' name='credentials[password]' placeholder='Password'>
-              <br>
-              <label for='password-confirm'>Password</label>
-              <br>
-              <input type='password' name='credentials[password_confirmation]' placeholder='Confirm Password'>
-              <br>
-              <input type='submit' name='submit' class='submit'>
+          <div class="tab-pane" id="newuserform">
+            <form id="sign-up">
+              <div class="form-group" id="newuser">
+                <h4>Sign Up</h4>
+                <h6>Once you have signed up, you will need to login by clicking on the Sign-in tab.</h6>
+                <label for="">Username</label>
+                <input type="text" name="credentials[email]" value="" placeholder="Email" class="form-control col-xs-1 box"><br>
+                <label for="">Password</label>
+                <input type="password" name="credentials[password]" value="" placeholder="Password" class="form-control col-xs-1 box">
+                <input type="password" name="credentials[password_confirmation]" value="" placeholder="Confirm Password" class="form-control col-xs-1 box"><br>
+                <button type="submit" class="btn btn-outline-primary btn-lg signingup" name="button">Sign Up</button>
+              </div>
             </form>
-          </div>
-
-          <div class='tab-pane' id='changepassword'>
-            <form id='update'>
+            <div id="newuser2">
+              <h4>You have successfully signed up!
+                <br>
+                You can now click the Sign-in tab to login! :)
+              </h4>
+            </div>
+            <div id="newusererrorp">
+              <h4>
+              The passwords enter do not match!
               <br>
-              <label for='username'>Email</label>
-              <br>
-              <input type='text' name='credentials[email]' placeholder='Email'>
-              <br>
-              <div class='form-group'><label form='name'>Change Password</label>
-              <br>
-              <input type='password' name='passwords[old]' placeholder='Old Password'>
-              <br>
-              <input type='password' name='passwords[new]' placeholder='New Password'>
-              <br>
-              <input type='submit' name='submit' class='submit'></div>
-            </form>
+              Please make sure your passwords match and try again.
+            </h4>
+            </div>
           </div>
 
         </div>
 
-        <div class='modal-footer'>
+        <div class="modal-footer">
         </div>
 
       </div>
     </div>
 
   </div>
-  <nav class='navbar navbar-default navbar-fixed-bottom'>
-    <div class='container'>
-      <div>
-        <form id='signOut'>
-          <button class='btn btn-primary newGame'>Sign Out</button>
+
+  <nav class="navbar navbar-default navbar-fixed-top modalbar">
+    <div class="container">
+      <div class="col-xs-3 box">
+        <form id="sign-out">
+          <button class="btn btn-outline-primary btn-lg checkoutbtn" id="checkout">Sign Out</button>
         </form>
       </div>
-      <div>
-        <button class='btn btn-primary position-modal' data-target='#access' data-toggle='modal' type='button'>SignIn/SignUp</button>
+      <div class="col-xs-6 box">
+        <button class="btn btn-outline-primary btn-lg signupsignin" data-target="#access" data-toggle="modal" type="button" id="authenticate">SignIn/SignUp</button>
       </div>
+      <div class="col-xs-3 box">
+      <button class="btn btn-outline-primary btn-lg changepass" id="passwordChange" name="submit">Change Password</button>
+    </div>
     </div>
   </nav>
-
 </body>
 
 </html>
