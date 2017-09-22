@@ -1,11 +1,19 @@
 #!/bin/bash
 
-curl "https://aqueous-atoll-85096.herokuapp.com/games/post" \
+API="${API_ORIGIN:-https://aqueous-atoll-85096.herokuapp.com}" \
+URL_PATH="/sign-up"
+
+curl "${API}${URL_PATH}" \
   --include \
   --request POST \
-  --data-urlencode ""
+  --header "Content-Type: application/json" \
+  --data '{
+    "credentials": {
+      "email": "'"${EMAIL}"'",
+      "password": "'"${PASSWORD}"'",
+      "password_confirmation": "'"${PASSWORD}"'"
+    }
+  }'
 
-# --header "Content-Type: application/x-www-form-urlencoded"
-
-# data output from curl doesn't have a trailing newline
+echo
 echo
