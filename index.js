@@ -5,10 +5,10 @@
 
 // load manifests
 // scripts
-require('./assets/scripts/app')
-require('./assets/scripts/api')
-require('./assets/scripts/ui')
-require('./assets/scripts/gamelogic.js')
+// require('./assets/scripts/app')
+// require('./assets/scripts/auth/api')
+// require('./assets/scripts/auth/ui')
+// require('./assets/scripts/gamelogic.js')
 require('./assets/scripts/index.js')
 
 // styles
