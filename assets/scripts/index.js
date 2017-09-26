@@ -3,9 +3,9 @@
 const setAPIOrigin = require('./../../lib/set-api-origin')
 const config = require('./config')
 
-$(() => {
-  setAPIOrigin(location, config)
-})
+// $(() => {
+//   setAPIOrigin(location, config)
+// })
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example');
@@ -23,23 +23,24 @@ $(() => {
   $('#passwordChange').click(function () {
     $('#newpassword').toggle()
   })
-  $('#messages').show()
+  $('#startgame').click(function () {
+    $('table').toggle()
+  })
   $('#checkout').hide()
   $('#newpassword').hide()
   $('#newusererrorp').hide()
   $('#newuser2').hide()
   $('#loginerrorp').hide()
   $('#logedin').hide()
-  $('.changepass').hide()
-  $('.game-board').hide()
   $('#checkout').hide()
   $('#passwordChange').hide()
-  $('table').hide()
+  $('#startgame').hide()
   $('.turn').hide()
+  $('.changepass').hide()
+  $('table').hide()
   $('#authenticate').show()
   $('#newuser').show()
   $('#login').show()
-  $('#startgame').hide()
   setAPIOrigin(location, config)
   userEvents.addHandlers()
 })

@@ -2,14 +2,16 @@
   position: absolute;
   top: 1px;
   left: 1px;
-  background-color: #4286f4;
+  background-color: #FF0000;
+  color: #FFF;
 }
 
 .changepass {
   position: absolute;
   top: 1px;
   right: 1px;
-  background-color: #4286f4;
+  background-color: #FF0000;
+  color: #FFF;
 }
 
 .location {
@@ -43,7 +45,8 @@
 
 .signupsignin {
   margin: 0 auto;
-  background-color: #4286f4;
+  background-color: #FF0000;
+  color: #FFF;
 }
 
 .tab-content {
