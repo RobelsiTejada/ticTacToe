@@ -21,6 +21,7 @@ const userEvents = require('./auth/events')
 // On document ready
 $(() => {
   $('.game-board').hide()
+  $('.game-board').hide()
   setAPIOrigin(location, config)
   userEvents.addHandlers()
 })
