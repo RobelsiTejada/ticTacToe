@@ -5,15 +5,6 @@ require('./auth/ui.js')
 
 // on page load
 $(function () {
-  $('table').hide()
-  $('#newpassword').hide()
-  $('#checkout').hide()
-  $('#passwordChange').hide()
-  $('#newuser2').hide()
-  $('#logedin').hide()
-  $('#authenticate').show()
-  $('#newuser').show()
-  $('#login').show()
   let player = 1
   const table = $('table')
   const messages = $('.messages')
