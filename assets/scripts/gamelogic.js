@@ -1,7 +1,7 @@
 require('./app.js')
-require('./events.js')
+require('./auth/events.js')
 require('./api.js')
-require('./ui.js')
+require('./auth/ui.js')
 
 // on page load
 $(function () {

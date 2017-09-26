@@ -10,13 +10,13 @@ $(() => {
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example');
 require('./app')
-require('./api')
-require('./ui')
+require('./auth/api')
+require('./auth/ui')
 require('./gamelogic')
 // use require without a reference to ensure a file is bundled
 // require('./example');
 //
-const userEvents = require('./events')
+const userEvents = require('./auth/events')
 
 // On document ready
 $(() => {
