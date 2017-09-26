@@ -1,152 +1,159 @@
 <!DOCTYPE html>
-<html>
 
-<head>
+  <html>
 
-  <title>Tic Tac Toe Ninja</title>
+  <head>
 
-  <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Tic Tac Toe Ninja</title>
 
-  <!-- Do not add `link` tags-->
-  <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
 
-  <!-- Do not add `script` tags-->
-  <script charset="utf-8" defer src="public/vendor.js" type="text/javascript">
-  </script>
+    <!-- Do not add `link` tags-->
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
 
-  <script charset="utf-8" defer src="public/application.js" type="text/javascript">
-  </script>
+    <!-- Do not add `script` tags-->
+    <script charset="utf-8" defer src="public/vendor.js" type="text/javascript"></script>
 
-</head>
+    <script charset="utf-8" defer src="public/application.js" type="text/javascript"></script>
 
-<body class="container-fluid">
-  <h1 class="banner">Tic Tac Toe Ninja</h1>
+  </head>
 
-  <div class="row">
-    <div class="game-board"></div>
-    <table>
-      <tr>
-        <td class="box1 col-xs-3 box"></td>
-        <td class="box2 col-xs-3 box"></td>
-        <td class="box3 col-xs-3 box"></td>
-      </tr>
-      <tr>
-        <td class="box4 col-xs-3 box"></td>
-        <td class="box5 col-xs-3 box"></td>
-        <td class="box6 col-xs-3 box"></td>
-      </tr>
-      <tr>
-        <td class="box7 col-xs-3 box"></td>
-        <td class="box8 col-xs-3 box"></td>
-        <td class="box9 col-xs-3 box"></td>
-      </tr>
-    </table>
+  <body class="container-fluid">
+    <h1 class="banner">Tic Tac Toe Ninja</h1>
 
-  </div>
-  <div class="turn"></div>
+    <div class="row">
+      <div class="game-board"></div>
+      <table>
+        <tr>
+          <td class="box1 col-xs-3 box"></td>
+          <td class="box2 col-xs-3 box"></td>
+          <td class="box3 col-xs-3 box"></td>
+        </tr>
+        <tr>
+          <td class="box4 col-xs-3 box"></td>
+          <td class="box5 col-xs-3 box"></td>
+          <td class="box6 col-xs-3 box"></td>
+        </tr>
+        <tr>
+          <td class="box7 col-xs-3 box"></td>
+          <td class="box8 col-xs-3 box"></td>
+          <td class="box9 col-xs-3 box"></td>
+        </tr>
+      </table>
 
-  <div id="newpassword">
-    <form id="change-password">
-      <div class="form-group">
-        <h4>Change Password:</h4>
-        <div><input type="password" name="passwords[old]" placeholder="Old Password" class="form-control col-xs-1 box"><input type="password" name="passwords[new]" placeholder="New Password" class="form-control col-xs-1 box">
-          <button type="submit" class="btn btn-outline-primary btn-lg" name="submit">Update</button></div>
-      </div>
-    </form>
-  </div>
+    </div>
+    <div class="turn"></div>
 
-  <div class="modal fade location modal-content" id="access">
-    <div class="modal-dialog">
-      <div class="modal-content">
-
-        <div class="modal-header">
-          <h4>Ninja Tic-Tac-Toe</h4>
+    <div id="newpassword">
+      <form id="change-password">
+        <div class="form-group">
+          <h4>Change Password:</h4>
+          <div>
+            <input type="password" name="passwords[old]" placeholder="Old Password" class="form-control col-xs-1 box">
+            <input type="password" name="passwords[new]" placeholder="New Password" class="form-control col-xs-1 box">
+            <button type="submit" class="btn btn-outline-primary btn-lg" name="submit">Update</button>
+          </div>
         </div>
+      </form>
+    </div>
 
-        <ul class="nav nav-tabs" id="tabContent">
-          <li class="active"><a data-toggle="tab" href="#loginform">Sign-In</a></li>
-          <li><a data-toggle="tab" href="#newuserform">Sign-Up</a></li>
-        </ul>
+    <div class="modal fade location modal-content" id="access">
+      <div class="modal-dialog">
+        <div class="modal-content">
 
-        <div class="tab-content">
-
-          <div class="tab-pane active" id="loginform">
-            <form id="sign-in">
-              <div class="form-group" id="login">
-                <h4>Login</h4>
-                <input type="text" class="form-control col-xs-1 box" name="credentials[email]" value="" placeholder="Email">
-                <input type="password" class="form-control col-xs-1 box" name="credentials[password]" value="" placeholder="Password">
-                <button type="submit" class="btn btn-outline-primary btn-lg">Login</button>
-              </div>
-            </form>
-            <div id="logedin">
-              <h4>
-                You have successfully signed up!<br>
-                <button class="btn btn-outline-primary btn-lg" data-dismiss="modal" type="button">Homepage</button>
-              </h4>
-            </div>
-            <div id="loginerrorp">
-              <h4>
-                The passwords you entered is not correct!
-                <br>
-                Please make sure your password is correct and try again.
-              </h4>
-            </div>
+          <div class="modal-header">
+            <h4>Ninja Tic-Tac-Toe</h4>
           </div>
 
-          <div class="tab-pane" id="newuserform">
-            <form id="sign-up">
-              <div class="form-group" id="newuser">
-                <h4>Sign Up</h4>
-                <h6>Once you have signed up, you will need to login by clicking on the Sign-in tab.</h6>
-                <label for="">Username</label>
-                <input type="text" name="credentials[email]" value="" placeholder="Email" class="form-control col-xs-1 box"><br>
-                <label for="">Password</label>
-                <input type="password" name="credentials[password]" value="" placeholder="Password" class="form-control col-xs-1 box">
-                <input type="password" name="credentials[password_confirmation]" value="" placeholder="Confirm Password" class="form-control col-xs-1 box"><br>
-                <button type="submit" class="btn btn-outline-primary btn-lg signingup" name="button">Sign Up</button>
+          <ul class="nav nav-tabs" id="tabContent">
+            <li class="active">
+              <a data-toggle="tab" href="#loginform">Sign-In</a>
+            </li>
+            <li>
+              <a data-toggle="tab" href="#newuserform">Sign-Up</a>
+            </li>
+          </ul>
+
+          <div class="tab-content">
+
+            <div class="tab-pane active" id="loginform">
+              <form id="sign-in">
+                <div class="form-group" id="login">
+                  <h4>Login</h4>
+                  <input type="text" class="form-control col-xs-1 box" name="credentials[email]" value="" placeholder="Email">
+                  <input type="password" class="form-control col-xs-1 box" name="credentials[password]" value="" placeholder="Password">
+                  <button type="submit" class="btn btn-outline-primary btn-lg">Login</button>
+                </div>
+              </form>
+              <div id="logedin">
+                <h4>
+                              You have successfully signed up!<br>
+                                <button class="btn btn-outline-primary btn-lg" data-dismiss="modal" type="button">Homepage</button>
+                              </h4>
               </div>
-            </form>
-            <div id="newuser2">
-              <h4>You have successfully signed up!
+              <div id="loginerrorp">
+                <h4>
+                                The passwords you entered is not correct!
+                                <br>
+                                  Please make sure your password is correct and try again.
+                                </h4>
+              </div>
+            </div>
+
+            <div class="tab-pane" id="newuserform">
+              <form id="sign-up">
+                <div class="form-group" id="newuser">
+                  <h4>Sign Up</h4>
+                  <h6>Once you have signed up, you will need to login by clicking on the Sign-in tab.</h6>
+                  <label for="">Username</label>
+                  <input type="text" name="credentials[email]" value="" placeholder="Email" class="form-control col-xs-1 box">
                   <br>
-                  You can now click the Sign-in tab to login! :)
-                </h4>
+                  <label for="">Password</label>
+                  <input type="password" name="credentials[password]" value="" placeholder="Password" class="form-control col-xs-1 box">
+                  <input type="password" name="credentials[password_confirmation]" value="" placeholder="Confirm Password" class="form-control col-xs-1 box">
+                  <br>
+                  <button type="submit" class="btn btn-outline-primary btn-lg signingup" name="button">Sign Up</button>
+                </div>
+              </form>
+              <div id="newuser2">
+                <h4>You have successfully signed up!
+                                            <br>
+                                              You can now click the Sign-in tab to login! :)
+                                            </h4>
+              </div>
+              <div id="newusererrorp">
+                <h4>
+                                              The passwords enter do not match!
+                                              <br>
+                                                Please make sure your passwords match and try again.
+                                              </h4>
+              </div>
             </div>
-            <div id="newusererrorp">
-              <h4>
-                The passwords enter do not match!
-                <br>
-                Please make sure your passwords match and try again.
-              </h4>
-            </div>
+
           </div>
 
-        </div>
+          <div class="modal-footer"></div>
 
-        <div class="modal-footer">
         </div>
-
       </div>
+
     </div>
 
-  </div>
+    <nav class="navbar navbar-default navbar-fixed-bottom modalbar">
+      <div class="container">
+        <div class="col-xs-3 box">
+          <form id="sign-out">
+            <button class="btn btn-outline-primary btn-lg checkoutbtn" id="checkout">Sign Out</button>
+          </form>
+        </div>
+        <div class="col-xs-6 box">
+          <button class="btn btn-outline-primary btn-lg signupsignin" data-target="#access" data-toggle="modal" type="button" id="authenticate">SignIn/SignUp</button>
+        </div>
+        <div class="col-xs-3 box">
+          <button class="btn btn-outline-primary btn-lg changepass" id="passwordChange" name="submit">Change Password</button>
+        </div>
+      </div>
+    </nav>
+  </body>
 
-  <nav class="navbar navbar-default navbar-fixed-bottom modalbar">
-    <div class="container">
-      <div class="col-xs-3 box">
-        <form id="sign-out">
-          <button class="btn btn-outline-primary btn-lg checkoutbtn" id="checkout">Sign Out</button>
-        </form>
-      </div>
-      <div class="col-xs-6 box">
-        <button class="btn btn-outline-primary btn-lg signupsignin" data-target="#access" data-toggle="modal" type="button" id="authenticate">SignIn/SignUp</button>
-      </div>
-      <div class="col-xs-3 box">
-        <button class="btn btn-outline-primary btn-lg changepass" id="passwordChange" name="submit">Change Password</button>
-      </div>
-    </div>
-  </nav>
-</body>
-
-</html>
+  </html>

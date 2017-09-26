@@ -10,7 +10,7 @@ const signInSuccess = (data) => {
   $('#checkout').show()
   $('#logedin').show()
   $('#passwordChange').show()
-  $('table').show()
+  $('.game-board').show()
 }
 
 const signOutSuccess = () => {
