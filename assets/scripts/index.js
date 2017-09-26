@@ -21,7 +21,6 @@ const userEvents = require('./auth/events')
 // On document ready
 $(() => {
   $('.game-board').hide()
-  $('table').hide()
   $('#newpassword').hide()
   $('#checkout').hide()
   $('#passwordChange').hide()

@@ -5,6 +5,7 @@ require('./auth/ui.js')
 
 // on page load
 $(function () {
+  $('table').hide()
   let player = 1
   const table = $('table')
   const messages = $('.messages')
