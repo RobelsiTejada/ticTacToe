@@ -1,6 +1,6 @@
 require('./app.js')
 require('./auth/events.js')
-require('./api.js')
+require('./auth/api.js')
 require('./auth/ui.js')
 
 // on page load
