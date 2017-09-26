@@ -23,7 +23,7 @@
   <h1 class="banner">Tic Tac Toe Ninja</h1>
 
   <div class="row">
-  <div class="messages"></div>
+    <div class="messages"></div>
     <table>
       <tr>
         <td class="box1 col-xs-1 box"></td>
@@ -46,106 +46,107 @@
   <div class="turn"></div>
 
   <div id="newpassword">
-      <form id="change-password">
-        <div class="form-group">
-          <h4>Change Password:</h4><div><input type="password" name="passwords[old]" placeholder="Old Password" class="form-control col-xs-1 box"><input type="password" name="passwords[new]" placeholder="New Password" class="form-control col-xs-1 box">
+    <form id="change-password">
+      <div class="form-group">
+        <h4>Change Password:</h4>
+        <div><input type="password" name="passwords[old]" placeholder="Old Password" class="form-control col-xs-1 box"><input type="password" name="passwords[new]" placeholder="New Password" class="form-control col-xs-1 box">
           <button type="submit" class="btn btn-outline-primary btn-lg" name="submit">Update</button></div>
+      </div>
+    </form>
+  </div>
+
+  <div class="modal fade location modal-content" id="access">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <div class="modal-header">
+          <h4>Ninja Tic-Tac-Toe</h4>
         </div>
-      </form>
-    </div>
 
-    <div class="modal fade location modal-content" id="access">
-      <div class="modal-dialog">
-        <div class="modal-content">
+        <ul class="nav nav-tabs" id="tabContent">
+          <li class="active"><a data-toggle="tab" href="#loginform">Sign-In</a></li>
+          <li><a data-toggle="tab" href="#newuserform">Sign-Up</a></li>
+        </ul>
 
-          <div class="modal-header">
-            <h4>Ninja Tic-Tac-Toe</h4>
-          </div>
+        <div class="tab-content">
 
-          <ul class="nav nav-tabs" id="tabContent">
-            <li class="active"><a data-toggle="tab" href="#loginform">Sign-In</a></li>
-            <li><a data-toggle="tab" href="#newuserform">Sign-Up</a></li>
-          </ul>
-
-          <div class="tab-content">
-
-            <div class="tab-pane active" id="loginform">
-              <form id="sign-in">
-                <div class="form-group" id="login">
-                  <h4>Login</h4>
-                  <input type="text" class="form-control col-xs-1 box" name="credentials[email]" value="" placeholder="Email">
-                  <input type="password" class="form-control col-xs-1 box" name="credentials[password]" value="" placeholder="Password">
-                  <button type="submit" class="btn btn-outline-primary btn-lg">Login</button>
-                </div>
-              </form>
-              <div id="logedin">
-                <h4>
+          <div class="tab-pane active" id="loginform">
+            <form id="sign-in">
+              <div class="form-group" id="login">
+                <h4>Login</h4>
+                <input type="text" class="form-control col-xs-1 box" name="credentials[email]" value="" placeholder="Email">
+                <input type="password" class="form-control col-xs-1 box" name="credentials[password]" value="" placeholder="Password">
+                <button type="submit" class="btn btn-outline-primary btn-lg">Login</button>
+              </div>
+            </form>
+            <div id="logedin">
+              <h4>
                 You have successfully signed up!<br>
                 <button class="btn btn-outline-primary btn-lg" data-dismiss="modal" type="button">Homepage</button>
               </h4>
-              </div>
-              <div id="loginerrorp">
-                <h4>
+            </div>
+            <div id="loginerrorp">
+              <h4>
                 The passwords you entered is not correct!
                 <br>
                 Please make sure your password is correct and try again.
               </h4>
-              </div>
             </div>
+          </div>
 
-            <div class="tab-pane" id="newuserform">
-              <form id="sign-up">
-                <div class="form-group" id="newuser">
-                  <h4>Sign Up</h4>
-                  <h6>Once you have signed up, you will need to login by clicking on the Sign-in tab.</h6>
-                  <label for="">Username</label>
-                  <input type="text" name="credentials[email]" value="" placeholder="Email" class="form-control col-xs-1 box"><br>
-                  <label for="">Password</label>
-                  <input type="password" name="credentials[password]" value="" placeholder="Password" class="form-control col-xs-1 box">
-                  <input type="password" name="credentials[password_confirmation]" value="" placeholder="Confirm Password" class="form-control col-xs-1 box"><br>
-                  <button type="submit" class="btn btn-outline-primary btn-lg signingup" name="button">Sign Up</button>
-                </div>
-              </form>
-              <div id="newuser2">
-                <h4>You have successfully signed up!
+          <div class="tab-pane" id="newuserform">
+            <form id="sign-up">
+              <div class="form-group" id="newuser">
+                <h4>Sign Up</h4>
+                <h6>Once you have signed up, you will need to login by clicking on the Sign-in tab.</h6>
+                <label for="">Username</label>
+                <input type="text" name="credentials[email]" value="" placeholder="Email" class="form-control col-xs-1 box"><br>
+                <label for="">Password</label>
+                <input type="password" name="credentials[password]" value="" placeholder="Password" class="form-control col-xs-1 box">
+                <input type="password" name="credentials[password_confirmation]" value="" placeholder="Confirm Password" class="form-control col-xs-1 box"><br>
+                <button type="submit" class="btn btn-outline-primary btn-lg signingup" name="button">Sign Up</button>
+              </div>
+            </form>
+            <div id="newuser2">
+              <h4>You have successfully signed up!
                   <br>
                   You can now click the Sign-in tab to login! :)
                 </h4>
-              </div>
-              <div id="newusererrorp">
-                <h4>
+            </div>
+            <div id="newusererrorp">
+              <h4>
                 The passwords enter do not match!
                 <br>
                 Please make sure your passwords match and try again.
               </h4>
-              </div>
             </div>
-
-          </div>
-
-          <div class="modal-footer">
           </div>
 
         </div>
-      </div>
 
+        <div class="modal-footer">
+        </div>
+
+      </div>
     </div>
 
-    <nav class="navbar navbar-default navbar-fixed-top modalbar">
-      <div class="container">
-        <div class="col-xs-3 box">
-          <form id="sign-out">
-            <button class="btn btn-outline-primary btn-lg checkoutbtn" id="checkout">Sign Out</button>
-          </form>
-        </div>
-        <div class="col-xs-6 box">
-          <button class="btn btn-outline-primary btn-lg signupsignin" data-target="#access" data-toggle="modal" type="button" id="authenticate">SignIn/SignUp</button>
-        </div>
-        <div class="col-xs-3 box">
+  </div>
+
+  <nav class="navbar navbar-default navbar-fixed-top modalbar">
+    <div class="container">
+      <div class="col-xs-3 box">
+        <form id="sign-out">
+          <button class="btn btn-outline-primary btn-lg checkoutbtn" id="checkout">Sign Out</button>
+        </form>
+      </div>
+      <div class="col-xs-6 box">
+        <button class="btn btn-outline-primary btn-lg signupsignin" data-target="#access" data-toggle="modal" type="button" id="authenticate">SignIn/SignUp</button>
+      </div>
+      <div class="col-xs-3 box">
         <button class="btn btn-outline-primary btn-lg changepass" id="passwordChange" name="submit">Change Password</button>
       </div>
-      </div>
-    </nav>
+    </div>
+  </nav>
 </body>
 
 </html>
