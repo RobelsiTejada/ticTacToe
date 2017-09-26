@@ -3,9 +3,7 @@ require('./auth/events.js')
 require('./auth/api.js')
 require('./auth/ui.js')
 
-// on page load
-$(function () {
-  $('table').hide()
+const startGame = function () {
   let player = 1
   const table = $('table')
   const messages = $('.messages')
@@ -46,7 +44,7 @@ $(function () {
       messages.html('You\'re nindo is weak, try again!!!') // message sent if board piece was alreay taken
     }
   })
-})
+}
 
 function results (player) {
   const ninja1wins = $('.ninja1wins')
@@ -122,4 +120,16 @@ function reset (table) {
   table.find('td').each(function () {
     $(this).removeClass('circle').removeClass('cross')
   })
+}
+
+module.exports = {
+  startGame,
+  results,
+  getState,
+  changeState,
+  playerPiece,
+  setNextPlayer,
+  nextPlayer,
+  checkForWin,
+  reset
 }

@@ -6,6 +6,7 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 
 const onSignUp = (event) => {
   event.preventDefault()
+
   const data = getFormFields(event.target)
   if (data.credentials.password !== data.credentials.password_confirmation) {
     $('#newusererrorp').show()
@@ -18,6 +19,7 @@ const onSignUp = (event) => {
 
 const onSignIn = (event) => {
   event.preventDefault()
+
   const data = getFormFields(event.target)
   api.signIn(data)
     .then(ui.signInSuccess)
@@ -26,6 +28,7 @@ const onSignIn = (event) => {
 
 const onSignOut = (event) => {
   event.preventDefault()
+
   const data = getFormFields(event.target)
   api.signOut(data)
     .then(ui.signOutSuccess)
@@ -34,6 +37,7 @@ const onSignOut = (event) => {
 
 const onChangePassword = (event) => {
   event.preventDefault()
+
   const data = getFormFields(event.target)
   api.changePassword(data)
     .then(ui.changePasswordSuccess)

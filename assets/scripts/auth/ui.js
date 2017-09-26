@@ -11,6 +11,9 @@ const signInSuccess = (data) => {
   $('#logedin').show()
   $('#passwordChange').show()
   $('.game-board').show()
+  $('.table').show()
+  $('#startgame').hide()
+  console.log(data)
 }
 
 const signOutSuccess = () => {
@@ -23,6 +26,8 @@ const signOutSuccess = () => {
   $('#authenticate').show()
   $('#newuser').show()
   $('#login').show()
+  $('.table').hide()
+  $('.game-board').hide()
 }
 
 const changePasswordSuccess = () => {
@@ -35,6 +40,7 @@ const signUpSuccess = (data) => {
   $('#newpassword').hide()
   $('#passwordChange').hide()
   $('#newuser2').show()
+  console.log(data)
 }
 
 const signUpFailure = (error) => {
@@ -50,6 +56,7 @@ const signInFailure = (error) => {
 }
 
 const success = (data) => {
+  console.log(data)
 }
 
 const failure = (error) => {
