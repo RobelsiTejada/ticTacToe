@@ -19,7 +19,7 @@
   margin: 0 auto;
   max-width: 30%;
   max-height: 45%;
-  color: #000;
+  color: #fff;
   background-color: #ff0000;
   background-image: url('./images/modal.jpg');
   background-size: cover;
@@ -40,7 +40,7 @@
   border: 3px solid #fff;
   padding: 10px;
   background-color: #ff0000;
-  color: #000;
+  color: #fff;
 }
 
 .signupsignin {
