@@ -40,60 +40,10 @@ const changePassword = function (data) {
   })
 }
 
-const createGame = function () {
-  // console.log ("Hello")
-  console.log(app.user.token)
-  return $.ajax({
-    url: app.host + '/games',
-    headers: {
-      Authorization: 'Token token=' + app.user.token
-    },
-    method: 'POST',
-    success: function (response) {
-      console.log(response)
-    }
-  })
-}
-
-const updateMoves = function (index, value, over) {
-  console.log(index + ' ' + value + ' ' + over)
-  console.log(app.user.token)
-  return $.ajax({
-    url: app.host + '/games/' + app.game.id,
-    method: 'PATCH',
-    // dataType: 'jsonp',
-    headers: {
-      Authorization: 'Token token=' + app.user.token
-    },
-    data: {
-      'game': {
-        'cell': {
-          'index': index,
-          'value': value
-        },
-        'over': over
-      }
-    }
-  })
-}
-
-const retrieveGames = function () {
-  return $.ajax({
-    method: 'GET',
-    url: app.host + '/games?over=true',
-    headers: {
-      Authorization: 'Token token=' + app.user.token
-    }
-  })
-}
-
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
-  getFormFields,
-  createGame,
-  updateMoves,
-  retrieveGames
+  getFormFields
 }
