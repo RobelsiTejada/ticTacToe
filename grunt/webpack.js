@@ -66,8 +66,8 @@ module.exports = {
           loader: 'url-loader?limit=10000&mimetype=application/font-woff'
         },
         {
-          test: /\.(ttf|eot|svg|png|jpg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-          loader: 'file-loader'
+          test: /\.(ttf|eot|svg|png|jpg|gif)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+          loaders: 'file-loader'
         },
         {
           test: /\.(hbs|handlebars)$/,

@@ -24,12 +24,14 @@ table {
 
     // player 1
     &.cross::before {
-      content: url("./images/cross.gif");
+      content: url('./images/Naruto.png');
+      height: 10px;
     }
 
     // player 2
     &.circle::before {
-      content: url("./images/circle.gif");
+      content: url('./images/Saske.png');
+      height: 10px;
     }
   }
 }

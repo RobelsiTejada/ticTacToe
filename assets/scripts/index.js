@@ -21,9 +21,6 @@ $(() => {
   $('#passwordChange').click(function () {
     $('#newpassword').toggle()
   })
-  $('#startgame').click(function () {
-    $('table').show()
-  })
   $('#checkout').hide()
   $('#newpassword').hide()
   $('#newusererrorp').hide()
@@ -33,11 +30,11 @@ $(() => {
   $('#checkout').hide()
   $('#passwordChange').hide()
   $('#startgame').hide()
-  $('.turn').hide()
   $('.changepass').hide()
   $('table').hide()
   $('#authenticate').show()
   $('#newuser').show()
   $('#login').show()
+  $('.messages').show()
   userEvents()
 })

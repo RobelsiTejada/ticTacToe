@@ -3,7 +3,12 @@ require('./auth/events.js')
 require('./auth/api.js')
 require('./auth/ui.js')
 
-const startGame = function () {
+// on page load
+$('#startgame').on('click', function () {
+  $('table').show()
+  $('.messages').show()
+  $('.turn').show()
+  $('#startgame').hide()
   let player = 1
   const table = $('table')
   const messages = $('.messages')
@@ -22,15 +27,15 @@ const startGame = function () {
       moveCount++
       changeState(td, pattern) // if empty adds the class of corresponding player
       if (checkForWin(table, pattern)) { // Checks for win
-        messages.html('Ninja ' + player + ' is the victor!!!')
         turn.html('')
+        messages.html('Ninja ' + player + ' is the victor!!!')
         reset(table)
         nextPlayer(turn, player)
         moveCount = 0
         results(player)
       } else if (moveCount >= 9) { // Checks for draw
-        messages.html('Match draw, pathetic!!!')
         turn.html('')
+        messages.html('Match draw, pathetic!!!')
         reset(table)
         nextPlayer(turn, player)
         moveCount = 0
@@ -38,13 +43,13 @@ const startGame = function () {
       } else {
         player = setNextPlayer(player) // let next player know its their turn
         nextPlayer(turn, player)
-        messages.html('')
+        turn.html('')
       }
     } else {
       messages.html('You\'re nindo is weak, try again!!!') // message sent if board piece was alreay taken
     }
   })
-}
+})
 
 function results (player) {
   const ninja1wins = $('.ninja1wins')
@@ -60,7 +65,6 @@ function results (player) {
     return (draw.html(result = result++))
   }
 }
-
 // Checks if board piece has already been taken
 function getState (td) {
   if (td.hasClass('cross') || td.hasClass('circle')) {
@@ -69,12 +73,10 @@ function getState (td) {
     return 1
   }
 }
-
 // if empty adds the class to corresponding player
 function changeState (td, pattern) {
   return td.addClass(pattern)
 }
-
 // selects player and assigns player a piece X or O
 function playerPiece (player) {
   if (player === 1) {
@@ -83,7 +85,6 @@ function playerPiece (player) {
     return 'circle'
   }
 }
-
 // switches turns
 function setNextPlayer (player) {
   if (player === 1) {
@@ -92,12 +93,10 @@ function setNextPlayer (player) {
     return (player = 1)
   }
 }
-
 // sends message to page on who's turn it is
 function nextPlayer (turn, player) {
   turn.html('Ninja ' + player + '\'s turn')
 }
-
 // check for win logic, looks for pattern equality in winning combinations
 function checkForWin (table, pattern) {
   let won = 0
@@ -126,16 +125,4 @@ function reset (table) {
   table.find('td').each(function () {
     $(this).removeClass('circle').removeClass('cross')
   })
-}
-
-module.exports = {
-  startGame,
-  results,
-  getState,
-  changeState,
-  playerPiece,
-  setNextPlayer,
-  nextPlayer,
-  checkForWin,
-  reset
 }
