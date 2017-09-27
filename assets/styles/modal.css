@@ -28,8 +28,10 @@
 .modal-content {
   margin: 0 auto;
   position: fixed;
-  max-width: 40%;
-  max-height: 65%;
+  min-width: 55%;
+  min-height: 75%;
+  max-width: 65%;
+  max-height: 75%;
   opacity: .6;
   background-color: #fff;
 }
