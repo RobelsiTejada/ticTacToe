@@ -38,7 +38,6 @@ $(() => {
   $('table').hide()
   $('#authenticate').show()
   $('#newuser').show()
-  $('.messages').show()
   $('#login').show()
   userEvents()
 })
