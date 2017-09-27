@@ -10,9 +10,8 @@ const signInSuccess = (data) => {
   $('#checkout').show()
   $('#logedin').show()
   $('#passwordChange').show()
-  $('.game-board').show()
-  $('.table').show()
-  $('#startgame').hide()
+  $('table').show()
+  $('.startgame').show()
   console.log(data)
 }
 
@@ -23,11 +22,11 @@ const signOutSuccess = () => {
   $('#passwordChange').hide()
   $('#newuser2').hide()
   $('#logedin').hide()
+  $('table').hide()
+  $('.startgame').hide()
   $('#authenticate').show()
   $('#newuser').show()
   $('#login').show()
-  $('.table').hide()
-  $('.game-board').hide()
 }
 
 const changePasswordSuccess = () => {
