@@ -4,9 +4,10 @@ require('./auth/api.js')
 require('./auth/ui.js')
 
 // on page load
-$(() => {
+const gamelogic = function () {
+  $('.gameBoard').show()
   let player = 1
-  const table = $('table')
+  const gameBoard = $('gameBoard')
   const messages = $('.messages')
   const turn = $('.turn')
   turn.html('Ninja ' + player + '\'s turn')
@@ -21,18 +22,18 @@ $(() => {
     if (state) {
       const pattern = playerPiece(player) // selects player and assigns player a piece X or O
       moveCount++
-      changeState(td, pattern) // if empty adds the class of corresponding player
-      if (checkForWin(table, pattern)) { // Checks for win
+      changeState(gameBoard, pattern) // if empty adds the class of corresponding player
+      if (checkForWin(gameBoard, pattern)) { // Checks for win
         turn.html('')
         messages.html('Ninja ' + player + ' is the victor!!!')
-        reset(table)
+        reset(gameBoard)
         nextPlayer(turn, player)
         moveCount = 0
         results(player)
       } else if (moveCount >= 9) { // Checks for draw
         turn.html('')
         messages.html('Match draw, pathetic!!!')
-        reset(table)
+        reset(gameBoard)
         nextPlayer(turn, player)
         moveCount = 0
         results()
@@ -45,7 +46,7 @@ $(() => {
       messages.html('You\'re nindo is weak, try again!!!') // message sent if board piece was alreay taken
     }
   })
-})
+}
 
 function results (player) {
   const ninja1wins = $('.ninja1wins')
@@ -100,31 +101,35 @@ function nextPlayer (turn, player) {
 }
 
 // check for win logic, looks for pattern equality in winning combinations
-function checkForWin (table, pattern) {
+function checkForWin (td, pattern) {
   let won = 0
-  if (table.find('.box1').hasClass(pattern) && table.find('.box2').hasClass(pattern) && table.find('.box3').hasClass(pattern)) {
+  if (td.find('.box1').hasClass(pattern) && td.find('.box2').hasClass(pattern) && td.find('.box3').hasClass(pattern)) {
     won = 1
-  } else if (table.find('.box1').hasClass(pattern) && table.find('.box4').hasClass(pattern) && table.find('.box7').hasClass(pattern)) {
+  } else if (td.find('.box1').hasClass(pattern) && td.find('.box4').hasClass(pattern) && td.find('.box7').hasClass(pattern)) {
     won = 1
-  } else if (table.find('.box1').hasClass(pattern) && table.find('.box5').hasClass(pattern) && table.find('.box9').hasClass(pattern)) {
+  } else if (td.find('.box1').hasClass(pattern) && td.find('.box5').hasClass(pattern) && td.find('.box9').hasClass(pattern)) {
     won = 1
-  } else if (table.find('.box4').hasClass(pattern) && table.find('.box5').hasClass(pattern) && table.find('.box6').hasClass(pattern)) {
+  } else if (td.find('.box4').hasClass(pattern) && td.find('.box5').hasClass(pattern) && td.find('.box6').hasClass(pattern)) {
     won = 1
-  } else if (table.find('.box7').hasClass(pattern) && table.find('.box8').hasClass(pattern) && table.find('.box9').hasClass(pattern)) {
+  } else if (td.find('.box7').hasClass(pattern) && td.find('.box8').hasClass(pattern) && td.find('.box9').hasClass(pattern)) {
     won = 1
-  } else if (table.find('.box2').hasClass(pattern) && table.find('.box5').hasClass(pattern) && table.find('.box8').hasClass(pattern)) {
+  } else if (td.find('.box2').hasClass(pattern) && td.find('.box5').hasClass(pattern) && td.find('.box8').hasClass(pattern)) {
     won = 1
-  } else if (table.find('.box3').hasClass(pattern) && table.find('.box6').hasClass(pattern) && table.find('.box9').hasClass(pattern)) {
+  } else if (td.find('.box3').hasClass(pattern) && td.find('.box6').hasClass(pattern) && td.find('.box9').hasClass(pattern)) {
     won = 1
-  } else if (table.find('.box3').hasClass(pattern) && table.find('.box5').hasClass(pattern) && table.find('.box7').hasClass(pattern)) {
+  } else if (td.find('.box3').hasClass(pattern) && td.find('.box5').hasClass(pattern) && td.find('.box7').hasClass(pattern)) {
     won = 1
   }
   return won
 }
 
-// for resetting table if win or draw occurs
-function reset (table) {
-  table.find('td').each(function () {
+// for resetting td if win or draw occurs
+function reset (td) {
+  td.find('td').each(function () {
     $(this).removeClass('circle').removeClass('cross')
   })
+}
+
+module.exports = {
+  gamelogic
 }

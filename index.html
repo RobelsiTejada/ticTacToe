@@ -15,29 +15,33 @@
 
 <h1 class="banner">Tic Tac Toe Ninja</h1>
 
-<div class="messages"></div>
+<div class="messages">You must sign in or sign up to play this game</div>
 <div class="row">
-<div class="game-board"></div>
-<table>
-<tr>
-<td class="box1 col-xs-3 box"></td>
-<td class="box2 col-xs-3 box"></td>
-<td class="box3 col-xs-3 box"></td>
-</tr>
-<tr>
-<td class="box4 col-xs-3 box"></td>
-<td class="box5 col-xs-3 box"></td>
-<td class="box6 col-xs-3 box"></td>
-</tr>
-<tr>
-<td class="box7 col-xs-3 box"></td>
-<td class="box8 col-xs-3 box"></td>
-<td class="box9 col-xs-3 box"></td>
-</tr>
-</table>
-</div>
-<div class="turn"></div>
 
+<table class="gameBoard">
+<div class="col">
+<div class="box box1" id="1"></div>
+<div class="box box4" id="4"></div>
+<div class="box box7" id="7"></div>
+</div>
+<div class="col">
+<div class="box box2" id="2"></div>
+<div class="box box5" id="5"></div>
+<div class="box box8" id="8"></div>
+</div>
+<div class="col">
+<div class="box box3" id="3"></div>
+<div class="box box6" id="6"></div>
+<div class="box box9" id="9"></div>
+</div>
+</div>
+<button type="button" class="newGame" id="newgame">New Game</button>
+</div>
+<div>
+<button id='get-games'>Get Games</button>
+<p class= "successMessage" id="gameStats">
+</p>
+</div>
 
 <div class="cpass" id="newpassword">
 <form id="change-password">

@@ -3,20 +3,18 @@ body {
   margin: auto;
   min-width: 100%;
   background-image: url('./images/background.jpg');
-  /*width: 100%;
-	height: 90vh;*/
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: cover;
 	background-attachment: fixed;
   background-color: #000;
-  /*font-family: 'Fondamento', cursive;*/
   height: auto;
   max-height: 400px;
   max-width: 400px;
   position: fixed;
   text-align: center;
   width: auto;
+  color: #fff;
 }
 
 h3 {
@@ -30,7 +28,13 @@ h3 {
   margin-top: 10px;
 }
 
-.turn,
+.turn {
+  margin-bottom: 10px;
+  font-size: 26px;
+  color: #fff;
+  text-align:center;
+}
+
 .messages {
   margin-bottom: 10px;
   font-size: 26px;
@@ -38,13 +42,29 @@ h3 {
   text-align:center;
 }
 
+.newGame {
+  margin: 0 auto;
+  background-color: #FF0000;
+  color: #FFF;
+}
+
+#get-games {
+  margin: 0 auto;
+  background-color: #FF0000;
+  color: #FFF;
+}
+
 .cpass {
-  position: absolute;
-  width: 155px;
-  left: 20px;
-  bottom: 20px;
+  margin:0 auto;
+  position: fixed;
+  width: 200px;
+  left: 40px;
+  bottom: 40px;
+  right: 40px;
+  top: 40px;
   border: 3px solid #fff;
-  padding: 10px;
+  padding: 3px;
   background-color: #ff0000;
   color: #fff;
+  max-height: 200px;
 }

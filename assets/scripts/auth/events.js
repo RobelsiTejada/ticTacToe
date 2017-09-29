@@ -44,11 +44,44 @@ const onChangePassword = (event) => {
     .catch(ui.failure)
 }
 
+const onGetGames = function (event) {
+  event.preventDefault()
+  api.index()
+    .then(ui.getSuccess)
+    .catch(ui.failure)
+  console.log(api.index())
+}
+
+const onCreateGame = function (event) {
+  event.preventDefault()
+  api.createGame()
+    .then(ui.onCreateGameSuccess)
+    .catch(ui.failure)
+}
+
+const onUpdateGame = function (index, value, over) {
+  api.updateGame(index, value, over)
+    .then(ui.onUpdateSuccess)
+    .catch(ui.onUpdateFailure)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#sign-out').on('submit', onSignOut)
   $('#change-password').on('submit', onChangePassword)
+  $('#reset').on('click', onCreateGame)
+  $('.td').on('click', onUpdateGame)
+  $('#get-games').on('click', onGetGames)
 }
 
-module.exports = addHandlers
+module.exports = {
+  addHandlers,
+  onSignUp,
+  onSignIn,
+  onSignOut,
+  onChangePassword,
+  onGetGames,
+  onCreateGame,
+  onUpdateGame
+}

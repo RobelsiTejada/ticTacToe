@@ -4,6 +4,7 @@ const app = require('../app.js')
 
 const signInSuccess = (data) => {
   app.user = data.user
+  $('.messages').html('You have successfully signed in. click New Game to start!')
   $('#authenticate').hide()
   $('#newpassword').hide()
   $('#login').hide()
@@ -13,7 +14,8 @@ const signInSuccess = (data) => {
   $('#logedin').show()
   $('#passwordChange').show()
   $('.messages').show()
-  $('table').show()
+  $('#get-games').show()
+  $('#newgame').show()
   console.log(data)
 }
 
@@ -31,6 +33,8 @@ const signOutSuccess = () => {
   $('#login').show()
   $('.messages').html('You have successfully signed out. Thanks for playing!')
   $('.turn').hide()
+  $('#get-games').hide()
+  $('#newgame').hide()
 }
 
 const changePasswordSuccess = () => {
@@ -58,6 +62,25 @@ const signInFailure = (error) => {
   $('#loginerrorp').show()
 }
 
+const onCreateGameSuccess = (data) => {
+  app.game = data.game
+  app.game.id = data.game.id
+  $('table').show()
+}
+
+const onUpdateSuccess = function (data) {
+  console.log(data)
+}
+
+// if game update fails
+const onUpdateFail = function (error) {
+  console.error(error)
+}
+
+const getSuccess = function (data) {
+  $('#gameStats').html('<div class="successMessage"> Games Played:' + data.games.length + '</div>')
+}
+
 const success = (data) => {
   console.log(data)
 }
@@ -74,5 +97,9 @@ module.exports = {
   signInSuccess,
   signOutSuccess,
   changePasswordSuccess,
-  signUpSuccess
+  signUpSuccess,
+  getSuccess,
+  onCreateGameSuccess,
+  onUpdateSuccess,
+  onUpdateFail
 }

@@ -40,10 +40,52 @@ const changePassword = function (data) {
   })
 }
 
+const index = function () {
+  return $.ajax({
+    url: app.host + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
+const createGame = function () {
+  return $.ajax({
+    url: app.host + '/games',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
+const updateGame = function (index, value, over) {
+  return $.ajax({
+    url: app.host + '/games/' + app.game.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      'game': {
+        'cell': {
+          'index': index,
+          'value': value
+        },
+        'over': over
+      }
+    }
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
   changePassword,
+  createGame,
+  index,
+  updateGame,
   getFormFields
 }

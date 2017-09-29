@@ -4,10 +4,10 @@ $td-white: #fff;
 table {
   left: 0;
   margin: auto;
-  max-height: 40vw;
-  max-width: 30vw;
-  min-height: 20vw;
-  min-width: 25vw;
+  max-height: 50vw;
+  max-width: 45vw;
+  min-height: 50vw;
+  min-width: 45vw;
   right: 0;
   text-align: center;
 
@@ -15,8 +15,8 @@ table {
     border: 5px solid;
     border-color: $td-white;
     cursor: pointer;
-    height: 17vw;
-    width: 20vw;
+    height: 20vw;
+    width: 30vw;
 
     &::before {
       font-size: 1.5em;
