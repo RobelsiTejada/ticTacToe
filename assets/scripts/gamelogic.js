@@ -3,7 +3,6 @@ require('./auth/events.js')
 require('./auth/api.js')
 require('./auth/ui.js')
 
-// on page load
 const gamelogic = function () {
   $('.gameBoard').show()
   let player = 1
