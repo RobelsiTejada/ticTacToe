@@ -12,7 +12,7 @@ $(() => {
 require('./app')
 require('./auth/api')
 require('./auth/ui')
-const gamelogic = require('./gamelogic')
+require('./gamelogic')
 
 const userEvents = require('./auth/events')
 
@@ -21,7 +21,9 @@ $(() => {
   $('#passwordChange').click(function () {
     $('#newpassword').toggle()
   })
-  $('.newGame').click(gamelogic)
+  $('#newgame').click(function () {
+    $('.gameBoard').show()
+  })
   $('#checkout').hide()
   $('#newpassword').hide()
   $('#newusererrorp').hide()

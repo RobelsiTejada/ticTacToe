@@ -16,30 +16,34 @@
 <h1 class="banner">Tic Tac Toe Ninja</h1>
 
 <div class="messages">You must sign in or sign up to play this game</div>
-<div class="row">
-
 <div class="gameBoard">
-<table>
-<tr>
-<td class="box box1" id="1"></td>
-<td class="box box2" id="2"></td>
-<td class="box box3" id="3"></td>
-</tr>
-<tr>
-<td class="box box4" id="4"></td>
-<td class="box box5" id="5"></td>
-<td class="box box6" id="6"></td>
-</tr>
-<tr>
-<td class="box box7" id="7"></td>
-<td class="box box8" id="8"></td>
-<td class="box box9" id="9"></td>
-</tr>
-</table>
+          <div class="col">
+            <div class="box box1" id="box1">A1</div>
+            <div class="box box2" id="box2">B1</div>
+            <div class="box box3" id="box3">C1</div>
+          </div>
+          <div class="col">
+            <div class="box box4" id="box4">A2</div>
+            <div class="box box5" id="box5">B2</div>
+            <div class="box box6" id="box6">C2</div>
+          </div>
+          <div class="col">
+            <div class="box box7" id="box7">A3</div>
+            <div class="box box8" id="box8">B3</div>
+            <div class="box box9" id="box9">C3</div>
+          </div>
+        </div>
+<button type="button" id="newgame" class="hidden">New Game</button>
+<div id="xWins" class="hidden">
+  <h2> Player X Wins!</h2>
 </div>
+<div id="oWins" class="hidden">
+  <h2> Player O Wins!</h2>
 </div>
-<button type="button" class="newGame" id="newgame">New Game</button>
-<button id='get-games'>Get Games</button>
+<div id="resultDraw" class="hidden">
+  <h2>Draw!</h2>
+</div>
+<button id = 'get-games'>Get Games</button>
 <p class= "successMessage" id="gameStats"></p>
 
 <div class="cpass" id="newpassword">

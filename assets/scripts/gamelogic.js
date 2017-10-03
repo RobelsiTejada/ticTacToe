@@ -1,134 +1,203 @@
 require('./app.js')
-require('./auth/events.js')
 require('./auth/api.js')
 require('./auth/ui.js')
+const events = require('./auth/events.js')
 
-const gamelogic = function () {
-  $('.gameBoard').show()
-  let player = 1
-  const gameBoard = $('gameBoard')
-  const messages = $('.messages')
-  const turn = $('.turn')
-  turn.html('Ninja ' + player + '\'s turn')
-  messages.html('You must sign in or sign up to play this game')
-  let moveCount = 0
+let turnCount = 0
+console.log(turnCount)
+let winner = ''
+let playerTurn = 'x'
+let xWinCount = 0
+let oWinCount = 0
+let value
+let index
+let over
 
-  // click on board piece, checks for win or draw or if piece has a value
-  $('td').click(function () {
-    const td = $(this)
-    const state = getState(td) // Checks if board piece has already been taken
+const createBoard = function () {
+  $('.gameBoard').removeClass('hidden')
+  $('#newgame').removeClass('hidden')
+}
 
-    if (state) {
-      const pattern = playerPiece(player) // selects player and assigns player a piece X or O
-      moveCount++
-      changeState(gameBoard, pattern) // if empty adds the class of corresponding player
-      if (checkForWin(gameBoard, pattern)) { // Checks for win
-        turn.html('')
-        messages.html('Ninja ' + player + ' is the victor!!!')
-        reset(gameBoard)
-        nextPlayer(turn, player)
-        moveCount = 0
-        results(player)
-      } else if (moveCount >= 9) { // Checks for draw
-        turn.html('')
-        messages.html('Match draw, pathetic!!!')
-        reset(gameBoard)
-        nextPlayer(turn, player)
-        moveCount = 0
-        results()
-      } else {
-        player = setNextPlayer(player) // let next player know its their turn
-        nextPlayer(turn, player)
-        turn.html('Ninja ' + player + '\'s turn')
-      }
+$('#play').click(createBoard)
+
+const addClass = function () {
+  if (playerTurn === 'x') {
+    if ($(this).hasClass('symO')) {
     } else {
-      messages.html('You\'re nindo is weak, try again!!!') // message sent if board piece was alreay taken
+      if ($(this).hasClass('symX')) {
+      } else {
+        $(this).addClass('symX')
+        turnCount++
+        console.log(turnCount)
+        playerTurn = 'o'
+        console.log(playerTurn)
+        if ($(this).is('#box1')) {
+          value = 'x'
+          index = 0
+          over = false
+          events.onUpdateGame(index, value, over)
+        } else if ($(this).is('#box2')) {
+          value = 'x'
+          index = 1
+          over = false
+          events.onUpdateGame(index, value, over)
+        } else if ($(this).is('#box3')) {
+          value = 'x'
+          index = 2
+          over = false
+          events.onUpdateGame(index, value, over)
+        } else if ($(this).is('#box4')) {
+          value = 'x'
+          index = 3
+          over = false
+          events.onUpdateGame(index, value, over)
+        } else if ($(this).is('#box5')) {
+          value = 'x'
+          index = 4
+          over = false
+          events.onUpdateGame(index, value, over)
+        } else if ($(this).is('#box6')) {
+          value = 'x'
+          index = 5
+          over = false
+          events.onUpdateGame(index, value, over)
+        } else if ($(this).is('#box7')) {
+          value = 'x'
+          index = 6
+          over = false
+          events.onUpdateGame(index, value, over)
+        } else if ($(this).is('#box8')) {
+          value = 'x'
+          index = 7
+          over = false
+          events.onUpdateGame(index, value, over)
+        } else if ($(this).is('#box9')) {
+          value = 'x'
+          index = 8
+          over = false
+          events.onUpdateGame(index, value, over)
+        }
+      }
     }
-  })
-}
-
-function results (player) {
-  const ninja1wins = $('.ninja1wins')
-  const ninja2wins = $('.ninja2wins')
-  const draw = $('.draw')
-  let result = ('.result')
-
-  if (player === 1) {
-    return (ninja1wins.html(result = result++))
-  } else if (player === 2) {
-    return (ninja2wins.html(result = result++))
   } else {
-    return (draw.html(result = result++))
+    if ($(this).hasClass('symX')) {
+    } else {
+      if ($(this).hasClass('symO')) {
+      } else {
+        $(this).addClass('symO')
+        turnCount++
+        console.log(turnCount)
+        playerTurn = 'x'
+        console.log(playerTurn)
+        if ($(this).is('#box1')) {
+          value = 'o'
+          index = 0
+          over = false
+          events.onUpdateGame(index, value, over)
+        } else if ($(this).is('#box2')) {
+          value = 'o'
+          index = 1
+          over = false
+          events.onUpdateGame(index, value, over)
+        } else if ($(this).is('#box3')) {
+          value = 'o'
+          index = 2
+          over = false
+          events.onUpdateGame(index, value, over)
+        } else if ($(this).is('#box4')) {
+          value = 'o'
+          index = 3
+          over = false
+          events.onUpdateGame(index, value, over)
+        } else if ($(this).is('#box5')) {
+          value = 'o'
+          index = 4
+          over = false
+          events.onUpdateGame(index, value, over)
+        } else if ($(this).is('#box6')) {
+          value = 'o'
+          index = 5
+          over = false
+          events.onUpdateGame(index, value, over)
+        } else if ($(this).is('#box7')) {
+          value = 'o'
+          index = 6
+          over = false
+          events.onUpdateGame(index, value, over)
+        } else if ($(this).is('#box8')) {
+          value = 'o'
+          index = 7
+          over = false
+          events.onUpdateGame(index, value, over)
+        } else if ($(this).is('#box9')) {
+          value = 'o'
+          index = 8
+          over = false
+          events.onUpdateGame(index, value, over)
+        }
+      }
+    }
   }
 }
 
-// Checks if board piece has already been taken
-function getState (td) {
-  if (td.hasClass('cross') || td.hasClass('circle')) {
-    return 0
-  } else {
-    return 1
+$('.box').click(addClass)
+
+const checkForWin = function () {
+  if (
+    ($('#box1').hasClass('symX') && $('#box2').hasClass('symX') && $('#box3').hasClass('symX')) ||
+    ($('#box1').hasClass('symX') && $('#box4').hasClass('symX') && $('#box7').hasClass('symX')) ||
+    ($('#box1').hasClass('symX') && $('#box5').hasClass('symX') && $('#box9').hasClass('symX')) ||
+    ($('#box4').hasClass('symX') && $('#box5').hasClass('symX') && $('#box6').hasClass('symX')) ||
+    ($('#box7').hasClass('symX') && $('#box8').hasClass('symX') && $('#box9').hasClass('symX')) ||
+    ($('#box2').hasClass('symX') && $('#box5').hasClass('symX') && $('#box8').hasClass('symX')) ||
+    ($('#box3').hasClass('symX') && $('#box6').hasClass('symX') && $('#box9').hasClass('symX')) ||
+    ($('#box3').hasClass('symX') && $('#box5').hasClass('symX') && $('#box7').hasClass('symX'))
+  ) {
+    winner = 'playerX'
+    console.log(winner + ' has won the game')
+    xWinCount++
+    console.log('X has won ' + xWinCount + ' games')
+    $('.gameBoard').addClass('hidden')
+    $('#xWins').removeClass('hidden')
+  } else if (
+    ($('#box1').hasClass('symO') && $('#box2').hasClass('symO') && $('#box3').hasClass('symO')) ||
+    ($('#box1').hasClass('symO') && $('#box4').hasClass('symO') && $('#box7').hasClass('symO')) ||
+    ($('#box1').hasClass('symO') && $('#box5').hasClass('symO') && $('#box9').hasClass('symO')) ||
+    ($('#box4').hasClass('symO') && $('#box5').hasClass('symO') && $('#box6').hasClass('symO')) ||
+    ($('#box7').hasClass('symO') && $('#box8').hasClass('symO') && $('#box9').hasClass('symO')) ||
+    ($('#box2').hasClass('symO') && $('#box5').hasClass('symO') && $('#box8').hasClass('symO')) ||
+    ($('#box3').hasClass('symO') && $('#box6').hasClass('symO') && $('#box9').hasClass('symO')) ||
+    ($('#box3').hasClass('symO') && $('#box5').hasClass('symO') && $('#box7').hasClass('symO'))
+  ) {
+    winner = 'playerO'
+    console.log(winner + ' has won the game')
+    oWinCount++
+    console.log('O has won ' + oWinCount + ' games')
+    $('.gameBoard').addClass('hidden')
+    $('#oWins').removeClass('hidden')
+  } else if (turnCount === 9) {
+    console.log('draw')
+    $('.gameBoard').addClass('hidden')
+    $('#resultDraw').removeClass('hidden')
   }
 }
 
-// if empty adds the class to corresponding player
-function changeState (td, pattern) {
-  return td.addClass(pattern)
+$('.box').click(checkForWin)
+
+const gameRestart = function () {
+  $('#box1').removeClass('symX symO')
+  $('#box2').removeClass('symX symO')
+  $('#box3').removeClass('symX symO')
+  $('#box4').removeClass('symX symO')
+  $('#box5').removeClass('symX symO')
+  $('#box6').removeClass('symX symO')
+  $('#box7').removeClass('symX symO')
+  $('#box8').removeClass('symX symO')
+  $('#box9').removeClass('symX symO')
+  winner = ' '
+  turnCount = 0
+  playerTurn = 'x'
+  $('.gameBoard').removeClass('hidden')
 }
 
-// selects player and assigns player a piece X or O
-function playerPiece (player) {
-  if (player === 1) {
-    return 'cross'
-  } else {
-    return 'circle'
-  }
-}
-
-// switches turns
-function setNextPlayer (player) {
-  if (player === 1) {
-    return (player = 2)
-  } else {
-    return (player = 1)
-  }
-}
-
-// sends message to page on who's turn it is
-function nextPlayer (turn, player) {
-  turn.html('Ninja ' + player + '\'s turn')
-}
-
-// check for win logic, looks for pattern equality in winning combinations
-function checkForWin (td, pattern) {
-  let won = 0
-  if (td.find('.box1').hasClass(pattern) && td.find('.box2').hasClass(pattern) && td.find('.box3').hasClass(pattern)) {
-    won = 1
-  } else if (td.find('.box1').hasClass(pattern) && td.find('.box4').hasClass(pattern) && td.find('.box7').hasClass(pattern)) {
-    won = 1
-  } else if (td.find('.box1').hasClass(pattern) && td.find('.box5').hasClass(pattern) && td.find('.box9').hasClass(pattern)) {
-    won = 1
-  } else if (td.find('.box4').hasClass(pattern) && td.find('.box5').hasClass(pattern) && td.find('.box6').hasClass(pattern)) {
-    won = 1
-  } else if (td.find('.box7').hasClass(pattern) && td.find('.box8').hasClass(pattern) && td.find('.box9').hasClass(pattern)) {
-    won = 1
-  } else if (td.find('.box2').hasClass(pattern) && td.find('.box5').hasClass(pattern) && td.find('.box8').hasClass(pattern)) {
-    won = 1
-  } else if (td.find('.box3').hasClass(pattern) && td.find('.box6').hasClass(pattern) && td.find('.box9').hasClass(pattern)) {
-    won = 1
-  } else if (td.find('.box3').hasClass(pattern) && td.find('.box5').hasClass(pattern) && td.find('.box7').hasClass(pattern)) {
-    won = 1
-  }
-  return won
-}
-
-// for resetting td if win or draw occurs
-function reset (td) {
-  td.find('td').each(function () {
-    $(this).removeClass('circle').removeClass('cross')
-  })
-}
-
-module.exports = {
-  gamelogic
-}
+$('#newgame').click(gameRestart)
