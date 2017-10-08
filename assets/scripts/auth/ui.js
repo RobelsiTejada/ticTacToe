@@ -31,7 +31,6 @@ const signOutSuccess = () => {
   $('#newuser').show()
   $('#login').show()
   $('.messages').html('You have successfully signed out. Thanks for playing!')
-  $('.turn').hide()
   $('#get-games').hide()
   $('.newGame').hide()
   $('.gameBoard').hide()
@@ -82,7 +81,7 @@ const onUpdateFail = function (error) {
 
 const getSuccess = function (data) {
   console.log(data)
-  $('#gameStats').html('<div class="successMessage"> Games Played:' + data.games.length + '</div>')
+  $('#gameStats').html('<div class="successMessage"> Games Played: ' + data.games.length + '</div>')
 }
 
 const success = (data) => {

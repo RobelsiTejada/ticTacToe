@@ -17,7 +17,51 @@ const createBoard = function () {
   $('#newgame').show()
 }
 
-$('#play').click(createBoard)
+$('#newgame').click(createBoard)
+
+const checkForWin = function () {
+  if (
+    ($('#box1').hasClass('symX') && $('#box2').hasClass('symX') && $('#box3').hasClass('symX')) ||
+    ($('#box1').hasClass('symX') && $('#box4').hasClass('symX') && $('#box7').hasClass('symX')) ||
+    ($('#box1').hasClass('symX') && $('#box5').hasClass('symX') && $('#box9').hasClass('symX')) ||
+    ($('#box4').hasClass('symX') && $('#box5').hasClass('symX') && $('#box6').hasClass('symX')) ||
+    ($('#box7').hasClass('symX') && $('#box8').hasClass('symX') && $('#box9').hasClass('symX')) ||
+    ($('#box2').hasClass('symX') && $('#box5').hasClass('symX') && $('#box8').hasClass('symX')) ||
+    ($('#box3').hasClass('symX') && $('#box6').hasClass('symX') && $('#box9').hasClass('symX')) ||
+    ($('#box3').hasClass('symX') && $('#box5').hasClass('symX') && $('#box7').hasClass('symX'))
+  ) {
+    winner = 'playerX'
+    turnCount = 0
+    console.log(winner + ' has won the game')
+    xWinCount++
+    console.log('X has won ' + xWinCount + ' games')
+    $('.gameBoard').hide()
+    $('#xWins').show()
+  } else if (
+    ($('#box1').hasClass('symO') && $('#box2').hasClass('symO') && $('#box3').hasClass('symO')) ||
+    ($('#box1').hasClass('symO') && $('#box4').hasClass('symO') && $('#box7').hasClass('symO')) ||
+    ($('#box1').hasClass('symO') && $('#box5').hasClass('symO') && $('#box9').hasClass('symO')) ||
+    ($('#box4').hasClass('symO') && $('#box5').hasClass('symO') && $('#box6').hasClass('symO')) ||
+    ($('#box7').hasClass('symO') && $('#box8').hasClass('symO') && $('#box9').hasClass('symO')) ||
+    ($('#box2').hasClass('symO') && $('#box5').hasClass('symO') && $('#box8').hasClass('symO')) ||
+    ($('#box3').hasClass('symO') && $('#box6').hasClass('symO') && $('#box9').hasClass('symO')) ||
+    ($('#box3').hasClass('symO') && $('#box5').hasClass('symO') && $('#box7').hasClass('symO'))
+  ) {
+    winner = 'playerO'
+    turnCount = 0
+    console.log(winner + ' has won the game')
+    oWinCount++
+    console.log('O has won ' + oWinCount + ' games')
+    $('.gameBoard').hide()
+    $('#oWins').show()
+  } else if (turnCount === 9) {
+    console.log('draw')
+    $('.gameBoard').hide()
+    $('#resultDraw').show()
+  }
+}
+
+$('.box').click(checkForWin)
 
 const addClass = function () {
   if (playerTurn === 'x') {
@@ -26,6 +70,7 @@ const addClass = function () {
       if ($(this).hasClass('symX')) {
       } else {
         $(this).addClass('symX')
+        checkForWin()
         turnCount++
         console.log(turnCount)
         playerTurn = 'o'
@@ -84,6 +129,7 @@ const addClass = function () {
       if ($(this).hasClass('symO')) {
       } else {
         $(this).addClass('symO')
+        checkForWin()
         turnCount++
         console.log(turnCount)
         playerTurn = 'x'
@@ -140,48 +186,6 @@ const addClass = function () {
 }
 
 $('.box').click(addClass)
-
-const checkForWin = function () {
-  if (
-    ($('#box1').hasClass('symX') && $('#box2').hasClass('symX') && $('#box3').hasClass('symX')) ||
-    ($('#box1').hasClass('symX') && $('#box4').hasClass('symX') && $('#box7').hasClass('symX')) ||
-    ($('#box1').hasClass('symX') && $('#box5').hasClass('symX') && $('#box9').hasClass('symX')) ||
-    ($('#box4').hasClass('symX') && $('#box5').hasClass('symX') && $('#box6').hasClass('symX')) ||
-    ($('#box7').hasClass('symX') && $('#box8').hasClass('symX') && $('#box9').hasClass('symX')) ||
-    ($('#box2').hasClass('symX') && $('#box5').hasClass('symX') && $('#box8').hasClass('symX')) ||
-    ($('#box3').hasClass('symX') && $('#box6').hasClass('symX') && $('#box9').hasClass('symX')) ||
-    ($('#box3').hasClass('symX') && $('#box5').hasClass('symX') && $('#box7').hasClass('symX'))
-  ) {
-    winner = 'playerX'
-    console.log(winner + ' has won the game')
-    xWinCount++
-    console.log('X has won ' + xWinCount + ' games')
-    $('.gameBoard').hide()
-    $('#xWins').show()
-  } else if (
-    ($('#box1').hasClass('symO') && $('#box2').hasClass('symO') && $('#box3').hasClass('symO')) ||
-    ($('#box1').hasClass('symO') && $('#box4').hasClass('symO') && $('#box7').hasClass('symO')) ||
-    ($('#box1').hasClass('symO') && $('#box5').hasClass('symO') && $('#box9').hasClass('symO')) ||
-    ($('#box4').hasClass('symO') && $('#box5').hasClass('symO') && $('#box6').hasClass('symO')) ||
-    ($('#box7').hasClass('symO') && $('#box8').hasClass('symO') && $('#box9').hasClass('symO')) ||
-    ($('#box2').hasClass('symO') && $('#box5').hasClass('symO') && $('#box8').hasClass('symO')) ||
-    ($('#box3').hasClass('symO') && $('#box6').hasClass('symO') && $('#box9').hasClass('symO')) ||
-    ($('#box3').hasClass('symO') && $('#box5').hasClass('symO') && $('#box7').hasClass('symO'))
-  ) {
-    winner = 'playerO'
-    console.log(winner + ' has won the game')
-    oWinCount++
-    console.log('O has won ' + oWinCount + ' games')
-    $('.gameBoard').hide()
-    $('#oWins').show()
-  } else if (turnCount === 9) {
-    console.log('draw')
-    $('.gameBoard').hide()
-    $('#resultDraw').show()
-  }
-}
-
-$('.box').click(checkForWin)
 
 const gameRestart = function () {
   $('#box1').removeClass('symX symO')
