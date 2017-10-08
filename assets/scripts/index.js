@@ -21,8 +21,11 @@ $(() => {
   $('#passwordChange').click(function () {
     $('#newpassword').toggle()
   })
-  $('#newgame').click(function () {
+  $('.newGame').click(function () {
     $('.gameBoard').show()
+    $('#xWins').hide()
+    $('#oWins').hide()
+    $('#resultDraw').hide()
   })
   $('#checkout').hide()
   $('#newpassword').hide()
@@ -39,7 +42,10 @@ $(() => {
   $('#login').show()
   $('.messages').show()
   $('#get-games').hide()
-  $('#newgame').hide()
+  $('.newGame').hide()
   $('.gameBoard').hide()
+  $('#xWins').hide()
+  $('#oWins').hide()
+  $('#resultDraw').hide()
   userEvents.addHandlers()
 })

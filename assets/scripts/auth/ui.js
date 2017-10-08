@@ -13,9 +13,10 @@ const signInSuccess = (data) => {
   $('#checkout').show()
   $('#logedin').show()
   $('#passwordChange').show()
-  $('.messages').show()
+  $('.messages').hide()
   $('#get-games').show()
-  $('#newgame').show()
+  $('.newGame').show()
+  console.log(data)
 }
 
 const signOutSuccess = () => {
@@ -25,7 +26,6 @@ const signOutSuccess = () => {
   $('#passwordChange').hide()
   $('#newuser2').hide()
   $('#logedin').hide()
-  $('table').hide()
   $('.startgame').hide()
   $('#authenticate').show()
   $('#newuser').show()
@@ -33,13 +33,15 @@ const signOutSuccess = () => {
   $('.messages').html('You have successfully signed out. Thanks for playing!')
   $('.turn').hide()
   $('#get-games').hide()
-  $('#newgame').hide()
+  $('.newGame').hide()
   $('.gameBoard').hide()
   $('#gameStats').hide()
+  console.log()
 }
 
 const changePasswordSuccess = () => {
   $('#newpassword').hide()
+  console.log()
 }
 
 const signUpSuccess = (data) => {
@@ -48,6 +50,7 @@ const signUpSuccess = (data) => {
   $('#newpassword').hide()
   $('#passwordChange').hide()
   $('#newuser2').show()
+  console.log(data)
 }
 
 const signUpFailure = (error) => {
@@ -78,6 +81,7 @@ const onUpdateFail = function (error) {
 }
 
 const getSuccess = function (data) {
+  console.log(data)
   $('#gameStats').html('<div class="successMessage"> Games Played:' + data.games.length + '</div>')
 }
 

@@ -4,7 +4,6 @@ require('./auth/ui.js')
 const events = require('./auth/events.js')
 
 let turnCount = 0
-console.log(turnCount)
 let winner = ''
 let playerTurn = 'x'
 let xWinCount = 0
@@ -14,8 +13,8 @@ let index
 let over
 
 const createBoard = function () {
-  $('.gameBoard').removeClass('hidden')
-  $('#newgame').removeClass('hidden')
+  $('.gameBoard').show()
+  $('#newgame').show()
 }
 
 $('#play').click(createBoard)
@@ -157,8 +156,8 @@ const checkForWin = function () {
     console.log(winner + ' has won the game')
     xWinCount++
     console.log('X has won ' + xWinCount + ' games')
-    $('.gameBoard').addClass('hidden')
-    $('#xWins').removeClass('hidden')
+    $('.gameBoard').hide()
+    $('#xWins').show()
   } else if (
     ($('#box1').hasClass('symO') && $('#box2').hasClass('symO') && $('#box3').hasClass('symO')) ||
     ($('#box1').hasClass('symO') && $('#box4').hasClass('symO') && $('#box7').hasClass('symO')) ||
@@ -173,12 +172,12 @@ const checkForWin = function () {
     console.log(winner + ' has won the game')
     oWinCount++
     console.log('O has won ' + oWinCount + ' games')
-    $('.gameBoard').addClass('hidden')
-    $('#oWins').removeClass('hidden')
+    $('.gameBoard').hide()
+    $('#oWins').show()
   } else if (turnCount === 9) {
     console.log('draw')
-    $('.gameBoard').addClass('hidden')
-    $('#resultDraw').removeClass('hidden')
+    $('.gameBoard').hide()
+    $('#resultDraw').show()
   }
 }
 
@@ -197,7 +196,7 @@ const gameRestart = function () {
   winner = ' '
   turnCount = 0
   playerTurn = 'x'
-  $('.gameBoard').removeClass('hidden')
+  $('.gameBoard').show()
 }
 
 $('#newgame').click(gameRestart)

@@ -28,13 +28,6 @@ h3 {
   margin-top: 10px;
 }
 
-.turn {
-  margin-bottom: 10px;
-  font-size: 26px;
-  color: #fff;
-  text-align:center;
-}
-
 .messages {
   margin-bottom: 10px;
   font-size: 26px;
@@ -55,7 +48,7 @@ h3 {
 }
 
 .cpass {
-  margin:0 auto;
+  margin: 0 auto;
   position: fixed;
   width: 200px;
   left: 40px;
@@ -68,3 +61,40 @@ h3 {
   color: #fff;
   max-height: 200px;
 }
+
+.gameBoard {
+  overflow: hidden;
+  padding: 0 5px;
+  margin: 0 auto;
+
+}
+
+.symX {
+  content: url('./images/Naruto.png');
+  height: 10px;
+}
+
+.symO {
+  content: url('./images/Saske.png');
+  height: 10px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #008CAC;
+}
+
+.column {
+  float: left;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*.container
+{
+    height: 300px;
+    width: 100%;
+    border: 3px solid red;
+    overflow: hidden;
+}*/
